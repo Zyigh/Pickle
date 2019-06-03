@@ -21,6 +21,11 @@
 		4930792F22714E4600E979BE /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4930792A22714E4600E979BE /* SF-Pro-Text-Bold.otf */; };
 		4930793022714E4600E979BE /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4930792B22714E4600E979BE /* SF-Pro-Text-Medium.otf */; };
 		4930793122714E4600E979BE /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4930792C22714E4600E979BE /* SF-Pro-Text-Regular.otf */; };
+		493079332271B04E00E979BE /* SingleMissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493079322271B04E00E979BE /* SingleMissionController.swift */; };
+		497637AE22A4231E009B8BB9 /* ConnexionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497637AD22A4231E009B8BB9 /* ConnexionToken.swift */; };
+		49C0FAE322A43C2700FCAF6D /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */; };
+		49C0FAE522A474D400FCAF6D /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE422A474D400FCAF6D /* Tap.swift */; };
+		49C0FAE922A4BCF800FCAF6D /* ShortMissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE822A4BCF800FCAF6D /* ShortMissionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		4930792A22714E4600E979BE /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		4930792B22714E4600E979BE /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		4930792C22714E4600E979BE /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		493079322271B04E00E979BE /* SingleMissionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMissionController.swift; sourceTree = "<group>"; };
+		497637AD22A4231E009B8BB9 /* ConnexionToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionToken.swift; sourceTree = "<group>"; };
+		49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
+		49C0FAE422A474D400FCAF6D /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
+		49C0FAE822A4BCF800FCAF6D /* ShortMissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortMissionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				493078F52271076C00E979BE /* ViewController.swift */,
+				493079322271B04E00E979BE /* SingleMissionController.swift */,
+				49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */,
+				49C0FAE822A4BCF800FCAF6D /* ShortMissionCell.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -107,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				4930790C2271127800E979BE /* Utils.swift */,
+				497637AD22A4231E009B8BB9 /* ConnexionToken.swift */,
+				49C0FAE422A474D400FCAF6D /* Tap.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -200,11 +215,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4930790D2271127800E979BE /* Utils.swift in Sources */,
+				497637AE22A4231E009B8BB9 /* ConnexionToken.swift in Sources */,
 				493078F62271076C00E979BE /* ViewController.swift in Sources */,
+				49C0FAE322A43C2700FCAF6D /* MissionsViewController.swift in Sources */,
 				4930791922711A4700E979BE /* APIConnexion.swift in Sources */,
 				493078F42271076C00E979BE /* AppDelegate.swift in Sources */,
 				4930790A2271115500E979BE /* Codables.swift in Sources */,
+				49C0FAE522A474D400FCAF6D /* Tap.swift in Sources */,
+				493079332271B04E00E979BE /* SingleMissionController.swift in Sources */,
 				4930790822710AB900E979BE /* Network.swift in Sources */,
+				49C0FAE922A4BCF800FCAF6D /* ShortMissionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,141 +8,132 @@
 
 import Foundation
 
-class APIConnexion {
-    static let apiBaseUrl = "http://192.168.1.14:80"
+class ApiConnexion {
+    // Static class is static
+    private init(){}
     
-    enum Result: String {
-        case victory
-        case defeat
-        case draw
+    private static let apiBaseUrl = "http://127.0.0.1:80"
+    
+    private static func getDecoder() -> JSONDecoder {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(format)
+        
+        return decoder
     }
     
-    public static func getNewUser(completion: @escaping Network.NetworkCompletion<Codable>) {
-        if let u = Utils.user {
-            completion(u, nil)
-            return
-        }
+    static func get<T: Codable>(
+        urlRequest: URLRequest,
+        decodable: T.Type,
+        configuration: URLSessionConfiguration = URLSessionConfiguration.default,
+        delegate: URLSessionDelegate? = nil,
+        delegateQueue: OperationQueue? = nil,
+        completion: @escaping (ApiResponse)->Void
+        ) {
+        let session = URLSession(configuration: configuration)
         
-        let uri = "/user/new"
-        guard let url = URL(string: apiBaseUrl + uri) else {
-            completion(nil, .urlFormating(apiBaseUrl + uri))
-            return
-        }
-        
-        let network = Network.shared
-        network.getContent(urlRequest: URLRequest(url: url), decodable: User.self) {
-            user, error in
+        send(session: session, with: urlRequest, expecting: decodable) {
+            data, error in
             
-            guard nil == error else {
-                print(error!.localizedDescription)
-                completion(nil, error)
-                return
+            if let data = data {
+                completion(.success(data))
+            } else {
+                completion(.error(error ?? NetworkError.generic("error")))
             }
-            
-            guard let user = user else {
-                completion(nil, .generic("No result with no error"))
-                return
-            }
-            
-            Utils.user = user
-            completion(user, nil)
         }
     }
     
-    //@Todo set as post request with user in body
-    public static func getNewMissions(completion: @escaping Network.NetworkCompletion<Codable>) {
-        guard let u = Utils.user,
-              let userId = u.id else {
-            completion(nil, .generic("Current user cannot be found"))
+    static func post<T: Codable>(
+        urlRequest: URLRequest,
+        data: T,
+        decodable: T.Type,
+        configuration: URLSessionConfiguration = URLSessionConfiguration.default,
+        delegate: URLSessionDelegate? = nil,
+        delegateQueue: OperationQueue? = nil,
+        completion: @escaping (ApiResponse)->Void
+        ) {
+        let session = URLSession(configuration: configuration)
+        
+        var request = urlRequest
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Application/json", forHTTPHeaderField: "Accept")
+        guard let json = try? JSONEncoder().encode(data) else {
+            completion(.error(NetworkError.jsonParsingFail))
             return
         }
+        request.httpBody = json
         
-        guard u.missions.count - 4 < 1 else {
-            completion(u.missions, nil)
-            return
-        }
-        
-        let uri = "/\(userId.uuidString)/missions/new/\(u.missions.count)"
-        guard let url = URL(string: apiBaseUrl + uri) else {
-            completion(nil, .urlFormating(apiBaseUrl + uri))
-            return
-        }
-        
-        Network.shared.getContent(urlRequest: URLRequest(url: url), decodable: User.self) {
-            user, error in
+        send(session: session, with: request, expecting: decodable) {
+            data, error in
             
-            guard nil == error else {
-                print(error!.localizedDescription)
-                completion(nil, error)
-                return
+            if let data = data {
+                completion(.success(data))
+            } else {
+                completion(.error(error ?? NetworkError.generic("error")))
             }
-            
-            guard let user = user else {
-                completion(nil, .generic("No result with no error"))
-                return
-            }
-            
-            Utils.user = user
-            completion(user.missions, nil)
         }
     }
     
-    public static func getMission(id: UUID, completion: @escaping Network.NetworkCompletion<Codable>) {
-        let uri = "/missions/\(id.uuidString)"
-        guard let url = URL(string: apiBaseUrl + uri) else {
-            completion(nil, .urlFormating(apiBaseUrl + uri))
-            return
-        }
+    private static func send<T: Codable>(session: URLSession, with request: URLRequest, expecting decodable: T.Type, completion: @escaping NetworkCompletion<T>) {
+        session.dataTask(with: request) {
+            data, response, error in
+            
+            guard let data = data else {
+                completion(nil, .noData)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                completion(nil, .generic("No response received"))
+                return
+            }
+            
+            guard response.statusCode < 300 else {
+                completion(nil, .http(response.statusCode))
+                return
+            }
+            
+            if let d = try? getDecoder().decode(decodable, from: data) {
+                completion(d, nil)
+            } else {
+                completion(nil, .jsonParsingFail)
+            }
+            }.resume()
+    }
+}
+
+extension ApiConnexion {
+    typealias NetworkCompletion<T> = (T?, NetworkError?)->Void
+    
+    enum NetworkError : Error {
+        case noData
+        case jsonParsingFail
+        case http(Int)
+        case generic(String)
+        case urlFormating(String)
         
-        let network = Network.shared
-        network.getContent(urlRequest: URLRequest(url: url), decodable: Mission.self) {
-            mission, error in
-            
-            guard nil == error else {
-                print(error!.localizedDescription)
-                completion(nil, error)
-                return
+        var localizedDescription: String {
+            switch self {
+            case .noData:
+                return NSLocalizedString("No data was returned by query", comment: "No Data")
+            case .jsonParsingFail:
+                return NSLocalizedString("Couldn't parse JSON with Codable provided", comment: "JSON Parsing Error")
+            case .http(let code):
+                return NSLocalizedString("Invalid HTTP response with code : \(code)", comment: "HTTP error")
+            case .generic(let message):
+                return NSLocalizedString(message, comment: "Something went wrong")
+            case .urlFormating(let url):
+                return NSLocalizedString("\(url) is not a valid url", comment: "URL Formatting")
             }
-            
-            guard let mission = mission else {
-                completion(nil, .generic("No result with no error"))
-                return
-            }
-            
-            completion(mission, nil)
         }
     }
     
-    public static func finishMission(id: UUID, result: Result, completion: @escaping Network.NetworkCompletion<Codable>) {
-        
-        guard let u = Utils.user,
-            let userId = u.id else {
-                completion(nil, .generic("Current user cannot be found"))
-                return
-        }
-        
-        let uri = "/\(userId.uuidString)/\(id.uuidString)/\(result.rawValue)"
-        guard let url = URL(string: apiBaseUrl + uri) else {
-            completion(nil, .urlFormating(apiBaseUrl + uri))
-            return
-        }
-        
-        Network.shared.getContent(urlRequest: URLRequest(url: url), decodable: User.self) {
-            user, error in
-            
-            guard nil == error else {
-                print(error!.localizedDescription)
-                completion(nil, error)
-                return
-            }
-            
-            guard let user = user else {
-                completion(nil, .generic("No result with no error"))
-                return
-            }
-            
-            Utils.user = user
-            completion(user.missions, nil)
-        }
+    enum ApiResponse {
+        case success(Codable)
+        case error(Error)
     }
 }
