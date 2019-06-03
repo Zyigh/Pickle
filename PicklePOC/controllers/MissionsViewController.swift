@@ -61,7 +61,7 @@ class MissionsViewController: UIViewController {
         super.viewDidLoad()
         Tap.addTapGesture(view: longMission, target: self, action: #selector(longMissionTap))
         
-        setUpShortMissionList()
+        
         
         let shorts = MissionsTest.missions
         for mission in shorts {
@@ -73,6 +73,8 @@ class MissionsViewController: UIViewController {
                                     title: mission.description))
             }
         }
+        setUpShortMissionList()
+        print(shortMissions.first ?? "nil")
     }
     
     @objc func longMissionTap(gesture: UITapGestureRecognizer) {
@@ -92,8 +94,18 @@ extension MissionsViewController: UICollectionViewDelegate, UICollectionViewData
         return shortMissions.count
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        guard let cell = cell as? ShortMissionCell else {
+//            print("B0lo$s")
+//            return
+//        }
+////        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShortMissionCell", for: indexPath) as! ShortMissionCell
+//        cell.configure(with: shortMissions[indexPath.row])
+//
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = shortMissionList.dequeueReusableCell(withReuseIdentifier: "ShortMissionCell", for: indexPath) as! ShortMissionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShortMissionCell", for: indexPath) as! ShortMissionCell
         cell.configure(with: shortMissions[indexPath.row])
         return cell
     }
@@ -105,3 +117,4 @@ extension MissionsViewController: UICollectionViewDelegate, UICollectionViewData
         shortMissionList.register(ShortMissionCell.self, forCellWithReuseIdentifier: "ShortMissionCell")
     }
 }
+

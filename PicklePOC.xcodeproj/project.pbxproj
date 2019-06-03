@@ -26,6 +26,7 @@
 		49C0FAE322A43C2700FCAF6D /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */; };
 		49C0FAE522A474D400FCAF6D /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE422A474D400FCAF6D /* Tap.swift */; };
 		49C0FAE922A4BCF800FCAF6D /* ShortMissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE822A4BCF800FCAF6D /* ShortMissionCell.swift */; };
+		49C0FAEC22A5063800FCAF6D /* PickleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAEB22A5063800FCAF6D /* PickleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
 		49C0FAE422A474D400FCAF6D /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
 		49C0FAE822A4BCF800FCAF6D /* ShortMissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortMissionCell.swift; sourceTree = "<group>"; };
+		49C0FAEB22A5063800FCAF6D /* PickleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				493079322271B04E00E979BE /* SingleMissionController.swift */,
 				49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */,
 				49C0FAE822A4BCF800FCAF6D /* ShortMissionCell.swift */,
+				49C0FAEB22A5063800FCAF6D /* PickleCell.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				493079332271B04E00E979BE /* SingleMissionController.swift in Sources */,
 				4930790822710AB900E979BE /* Network.swift in Sources */,
 				49C0FAE922A4BCF800FCAF6D /* ShortMissionCell.swift in Sources */,
+				49C0FAEC22A5063800FCAF6D /* PickleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,9 @@ class ShortMissionCell: UICollectionViewCell {
     }
     
     public func configure(with model: ShortMission) {
-        image.image = model.image
+        if let i = model.image {
+            image.image = i
+        }
         category.text = model.category
         title.text = model.title
     }

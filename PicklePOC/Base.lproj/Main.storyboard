@@ -157,7 +157,7 @@
                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P6F-X3-bAo">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="shortmissions" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P6F-X3-bAo">
                                 <rect key="frame" x="26" y="535" width="362" height="196"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -294,7 +294,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Quelques pickles..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-rT-3AD">
-                                <rect key="frame" x="24" y="515.5" width="366" height="50.5"/>
+                                <rect key="frame" x="24" y="515.5" width="366" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -306,29 +306,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ehs-Et-hvj">
-                                <rect key="frame" x="24" y="576" width="366" height="198"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="198" id="wlR-NC-xah"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7fc-st-B6J">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gjf-Bb-p5z">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q13-8x-3gY">
                                 <rect key="frame" x="24" y="774" width="366" height="88"/>
                                 <subviews>
@@ -369,27 +346,71 @@
                                     <constraint firstAttribute="height" constant="88" id="viD-oP-Ja6"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jxB-cY-wfm">
+                                <rect key="frame" x="24" y="544.5" width="366" height="139.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="C7d-lY-h2z" customClass="PickleCell" customModule="PicklePOC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="366" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C7d-lY-h2z" id="llX-3V-TI5">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewn-He-mmN">
+                                                    <rect key="frame" x="20" y="11" width="40" height="40"/>
+                                                    <color key="backgroundColor" name="pickleColor-purple"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="8bT-Xh-jra"/>
+                                                        <constraint firstAttribute="height" constant="40" id="NAM-ed-dWj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyg-oT-82U">
+                                                    <rect key="frame" x="76" y="0.0" width="290" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jyg-oT-82U" firstAttribute="top" secondItem="llX-3V-TI5" secondAttribute="top" id="E77-MG-AN2"/>
+                                                <constraint firstItem="Ewn-He-mmN" firstAttribute="top" secondItem="llX-3V-TI5" secondAttribute="topMargin" id="Lyp-65-quz"/>
+                                                <constraint firstItem="Jyg-oT-82U" firstAttribute="leading" secondItem="Ewn-He-mmN" secondAttribute="trailing" constant="16" id="T5Z-dQ-inH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jyg-oT-82U" secondAttribute="trailing" id="dVf-Tm-usk"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jyg-oT-82U" secondAttribute="bottom" id="hpc-ar-U1p"/>
+                                                <constraint firstItem="Ewn-He-mmN" firstAttribute="leading" secondItem="llX-3V-TI5" secondAttribute="leadingMargin" id="vWD-sE-AZg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pickleContentLabel" destination="Jyg-oT-82U" id="5Ga-A0-cz1"/>
+                                            <outlet property="rowNumberLabel" destination="Ewn-He-mmN" id="Zz7-vE-gEn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="Q13-8x-3gY" secondAttribute="trailing" constant="24" id="2AT-bR-grT"/>
-                            <constraint firstItem="Ehs-Et-hvj" firstAttribute="top" secondItem="ELb-rT-3AD" secondAttribute="bottom" constant="10" id="53N-bQ-4DU"/>
                             <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="Qu8-T2-vZD" secondAttribute="trailing" constant="24" id="90z-kp-OEW"/>
+                            <constraint firstItem="jxB-cY-wfm" firstAttribute="top" secondItem="ELb-rT-3AD" secondAttribute="bottom" constant="8" id="A9v-C1-WSg"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="top" secondItem="XYL-dw-v2z" secondAttribute="top" id="FHT-XY-Cam"/>
                             <constraint firstItem="Q13-8x-3gY" firstAttribute="bottom" secondItem="XYL-dw-v2z" secondAttribute="bottom" id="GEi-DP-5nc"/>
+                            <constraint firstItem="Q13-8x-3gY" firstAttribute="top" secondItem="jxB-cY-wfm" secondAttribute="bottom" constant="90" id="GL3-bd-oVd"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="top" secondItem="XYL-dw-v2z" secondAttribute="top" id="L9a-4L-iMR"/>
                             <constraint firstItem="fBX-lJ-NMI" firstAttribute="top" secondItem="PCd-kY-43P" secondAttribute="bottom" constant="17" id="LoH-oZ-cuf"/>
                             <constraint firstItem="Qu8-T2-vZD" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="Ubd-sd-Net"/>
-                            <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="Ehs-Et-hvj" secondAttribute="trailing" constant="24" id="Uu5-Ig-6UK"/>
                             <constraint firstItem="ELb-rT-3AD" firstAttribute="top" secondItem="K7l-4m-qRn" secondAttribute="bottom" constant="40" id="VCr-SR-z6y"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" id="Y83-zH-gnt"/>
+                            <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="jxB-cY-wfm" secondAttribute="trailing" constant="24" id="bTn-SU-00s"/>
                             <constraint firstItem="ELb-rT-3AD" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="dbo-2p-gB0"/>
                             <constraint firstItem="Qu8-T2-vZD" firstAttribute="top" secondItem="fBX-lJ-NMI" secondAttribute="bottom" constant="10" id="eB3-lT-XHG"/>
                             <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="0qJ-BU-tYo" secondAttribute="trailing" constant="24" id="edH-KQ-1tH"/>
                             <constraint firstItem="K7l-4m-qRn" firstAttribute="top" secondItem="0qJ-BU-tYo" secondAttribute="bottom" constant="8" id="fMn-Zu-am9"/>
                             <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="ELb-rT-3AD" secondAttribute="trailing" constant="24" id="fzT-tL-NC1"/>
-                            <constraint firstItem="Ehs-Et-hvj" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="gjw-pf-MaS"/>
-                            <constraint firstItem="Q13-8x-3gY" firstAttribute="top" secondItem="Ehs-Et-hvj" secondAttribute="bottom" id="jDX-JL-sNG"/>
                             <constraint firstItem="fBX-lJ-NMI" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="kGb-sH-O6v"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="trailing" secondItem="XYL-dw-v2z" secondAttribute="trailing" id="kf8-JE-MYJ"/>
                             <constraint firstItem="K7l-4m-qRn" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="qFP-Wb-NrZ"/>
@@ -399,11 +420,14 @@
                             <constraint firstItem="0qJ-BU-tYo" firstAttribute="top" secondItem="Qu8-T2-vZD" secondAttribute="bottom" constant="40" id="vcY-Eh-0z8"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="trailing" secondItem="XYL-dw-v2z" secondAttribute="trailing" id="vn0-Jy-l3U"/>
                             <constraint firstItem="0qJ-BU-tYo" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="xfb-Jw-txg"/>
+                            <constraint firstItem="jxB-cY-wfm" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="yZv-Hi-Ln6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XYL-dw-v2z"/>
                     </view>
                     <connections>
+                        <outlet property="acceptButton" destination="hrK-NN-XgD" id="mxu-OS-Ksl"/>
                         <outlet property="passerButton" destination="Cm0-dq-wvb" id="MBT-po-hN0"/>
+                        <outlet property="picklesList" destination="jxB-cY-wfm" id="uDV-tY-hR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Joe-Oc-X9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
