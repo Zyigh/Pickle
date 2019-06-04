@@ -65,3 +65,15 @@ extension UIColor {
     static let pickleLightGreen =
         UIColor(red: 154.0 / 255.0, green: 237.0 / 255.0, blue: 145.0 / 255.0, alpha: 1.0)
 }
+
+extension UserDefaults {
+    
+    func setValue(value: String, key: String) {
+        set(value, forKey: key)
+        synchronize()
+    }
+    
+    func getValue(key: String) -> String? {
+        return string(forKey: key)
+    }
+}

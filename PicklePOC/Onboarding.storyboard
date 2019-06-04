@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yrE-5Q-9ht">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Ob Intro Page View Controller-->
+        <scene sceneID="tD0-jX-8al">
+            <objects>
+                <pageViewController storyboardIdentifier="ObIntroPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Zkx-jA-QKz" customClass="ObIntroPageViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1B-CP-FhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="105"/>
+        </scene>
+        <!--Ob Intro Content View Controller-->
+        <scene sceneID="W1e-pF-1qJ">
+            <objects>
+                <viewController storyboardIdentifier="ObIntroContentViewController" id="VlH-RY-diw" customClass="ObIntroContentViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ii6-h5-dEr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WK-PY-zzX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aCt-9L-XyX">
+                                        <rect key="frame" x="37" y="107" width="300" height="340"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aCt-9L-XyX" secondAttribute="height" multiplier="15:17" id="bGY-8X-v80"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7WK-PY-zzX" secondAttribute="height" multiplier="125:149" id="9eO-WR-9MF"/>
+                                    <constraint firstAttribute="trailing" secondItem="aCt-9L-XyX" secondAttribute="trailing" constant="38" id="ABH-6d-YS1"/>
+                                    <constraint firstItem="aCt-9L-XyX" firstAttribute="leading" secondItem="7WK-PY-zzX" secondAttribute="leading" constant="37" id="IaY-3H-IDx"/>
+                                    <constraint firstAttribute="bottom" secondItem="aCt-9L-XyX" secondAttribute="bottom" id="hQd-8b-3EX"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="hSK-x5-OUZ">
+                                <rect key="frame" x="20" y="487" width="335" height="108"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Titre" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-FT-H96">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDg-9Y-LpC">
+                                        <rect key="frame" x="0.0" y="52" width="335" height="56"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Description    Description    Description    Description    Description    ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.12941" green="0.10979999999999999" blue="0.29804000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="SFProText-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.4083333333333332" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Sc-Gc-YU8" firstAttribute="trailing" secondItem="hSK-x5-OUZ" secondAttribute="trailing" constant="20" id="ECU-Sp-M5t"/>
+                            <constraint firstItem="7WK-PY-zzX" firstAttribute="leading" secondItem="9Sc-Gc-YU8" secondAttribute="leading" id="KLJ-sl-bUh"/>
+                            <constraint firstItem="hSK-x5-OUZ" firstAttribute="top" secondItem="7WK-PY-zzX" secondAttribute="bottom" constant="40" id="MUm-Df-2Yc"/>
+                            <constraint firstItem="7WK-PY-zzX" firstAttribute="trailing" secondItem="9Sc-Gc-YU8" secondAttribute="trailing" id="Skw-if-ncW"/>
+                            <constraint firstItem="7WK-PY-zzX" firstAttribute="top" secondItem="ii6-h5-dEr" secondAttribute="top" id="n18-e5-BJN"/>
+                            <constraint firstItem="hSK-x5-OUZ" firstAttribute="leading" secondItem="9Sc-Gc-YU8" secondAttribute="leading" constant="20" id="xhV-3y-J6V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Sc-Gc-YU8"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="725"/>
+                    <connections>
+                        <outlet property="contentImageView" destination="aCt-9L-XyX" id="Z5p-QX-bf8"/>
+                        <outlet property="descLabel" destination="UDg-9Y-LpC" id="TJj-ky-8dI"/>
+                        <outlet property="headingLabel" destination="gXo-FT-H96" id="q6H-vI-kMm"/>
+                        <outlet property="imageViewContainer" destination="7WK-PY-zzX" id="pUg-Oh-a7y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xol-TF-lUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565.60000000000002" y="63.418290854572717"/>
+        </scene>
+        <!--Ob Intro View Controller-->
+        <scene sceneID="aHl-ok-sqx">
+            <objects>
+                <viewController storyboardIdentifier="ObIntroViewController" id="yrE-5Q-9ht" customClass="ObIntroViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mcV-TK-slg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" restorationIdentifier="onboardinglaunch" translatesAutoresizingMaskIntoConstraints="NO" id="rPa-VA-I09">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="725"/>
+                                <connections>
+                                    <segue destination="Zkx-jA-QKz" kind="embed" id="alh-ze-JCo"/>
+                                </connections>
+                            </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="68n-rz-v51">
+                                <rect key="frame" x="20" y="692" width="23" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="to3-jq-kfA">
+                                <rect key="frame" x="306" y="74" width="49" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Passer">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipOnboardingWithSender:" destination="yrE-5Q-9ht" eventType="touchUpInside" id="aqh-Jn-AKd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hb9-fK-vqO">
+                                <rect key="frame" x="304" y="694" width="51" height="30"/>
+                                <state key="normal" title="Suivant">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextOnboardingPageWithSender:" destination="yrE-5Q-9ht" eventType="touchUpInside" id="kmd-tc-JaO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rPa-VA-I09" firstAttribute="leading" secondItem="it3-JI-RgT" secondAttribute="leading" id="1hH-sp-Um5"/>
+                            <constraint firstAttribute="bottom" secondItem="rPa-VA-I09" secondAttribute="bottom" constant="87" id="9xV-iu-5qk"/>
+                            <constraint firstItem="rPa-VA-I09" firstAttribute="top" secondItem="mcV-TK-slg" secondAttribute="top" id="BUF-kC-naU"/>
+                            <constraint firstItem="rPa-VA-I09" firstAttribute="trailing" secondItem="it3-JI-RgT" secondAttribute="trailing" id="CcN-NK-Rzu"/>
+                            <constraint firstItem="68n-rz-v51" firstAttribute="leading" secondItem="it3-JI-RgT" secondAttribute="leading" constant="20" id="D2c-Jv-6YJ"/>
+                            <constraint firstItem="to3-jq-kfA" firstAttribute="top" secondItem="it3-JI-RgT" secondAttribute="top" constant="30" id="DHV-t1-7QU"/>
+                            <constraint firstItem="it3-JI-RgT" firstAttribute="bottom" secondItem="68n-rz-v51" secondAttribute="bottom" constant="49" id="Dpm-z8-WPn"/>
+                            <constraint firstItem="it3-JI-RgT" firstAttribute="trailing" secondItem="to3-jq-kfA" secondAttribute="trailing" constant="20" id="gjq-eF-QCZ"/>
+                            <constraint firstItem="it3-JI-RgT" firstAttribute="trailing" secondItem="Hb9-fK-vqO" secondAttribute="trailing" constant="20" id="lFo-2Y-gyD"/>
+                            <constraint firstItem="it3-JI-RgT" firstAttribute="bottom" secondItem="Hb9-fK-vqO" secondAttribute="bottom" constant="54" id="lx8-qH-Mzg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="it3-JI-RgT"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="nextButton" destination="Hb9-fK-vqO" id="61Y-W4-vk2"/>
+                        <outlet property="pageControl" destination="68n-rz-v51" id="fNL-Nw-0QE"/>
+                        <outlet property="skipButton" destination="to3-jq-kfA" id="D2k-bi-jxj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kyc-de-6yF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-819.56521739130437" y="143.30357142857142"/>
+        </scene>
+        <!--Ob Name View Controller-->
+        <scene sceneID="Mp9-kE-HbL">
+            <objects>
+                <viewController storyboardIdentifier="ObNameViewController" id="Klb-u1-sGO" customClass="ObNameViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u8N-sV-bmZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisissez votre pseudo pour une nouvelle aventure !" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kky-dE-kk7">
+                                <rect key="frame" x="20" y="132" width="335" height="57.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tapez votre pseudo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iMj-Dg-zdt" customClass="PickleUsernameTextField" customModule="PicklePOC" customModuleProvider="target">
+                                <rect key="frame" x="20" y="299.5" width="335" height="20"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="Klb-u1-sGO" eventType="editingDidEnd" id="eQZ-aF-YKy"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ua-h0-Qms">
+                                <rect key="frame" x="265" y="74" width="90" height="34"/>
+                                <state key="normal" title="Déjà inscrit">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tz-uf-zxB" customClass="PickleButton" customModule="PicklePOC" customModuleProvider="target">
+                                <rect key="frame" x="20" y="669" width="335" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="5bp-Uj-I31"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Continuer">
+                                    <color key="titleColor" name="pickeColor-grey"/>
+                                </state>
+                                <connections>
+                                    <action selector="nameValidation:" destination="Klb-u1-sGO" eventType="touchUpInside" id="FvY-aP-rpL"/>
+                                    <segue destination="Yg6-aC-EeL" kind="show" id="S7a-js-7sS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SF-6G-FMT" customClass="PickleFormErrorMessage" customModule="PicklePOC" customModuleProvider="target">
+                                <rect key="frame" x="28" y="327.5" width="319" height="20.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Message d'erreur">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="SFProText-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6SF-6G-FMT" firstAttribute="top" secondItem="iMj-Dg-zdt" secondAttribute="bottom" constant="8" id="1MW-wA-X1S"/>
+                            <constraint firstItem="FKk-wu-DMY" firstAttribute="trailing" secondItem="4Ua-h0-Qms" secondAttribute="trailing" constant="20" id="3Ho-Rt-dj1"/>
+                            <constraint firstItem="iMj-Dg-zdt" firstAttribute="leading" secondItem="FKk-wu-DMY" secondAttribute="leading" constant="20" id="4pP-Gy-bn4"/>
+                            <constraint firstItem="iMj-Dg-zdt" firstAttribute="top" secondItem="kky-dE-kk7" secondAttribute="bottom" constant="110" id="5fQ-LH-eND"/>
+                            <constraint firstItem="kky-dE-kk7" firstAttribute="top" secondItem="FKk-wu-DMY" secondAttribute="top" constant="88" id="8RV-eL-qgO"/>
+                            <constraint firstItem="FKk-wu-DMY" firstAttribute="trailing" secondItem="6SF-6G-FMT" secondAttribute="trailing" constant="28" id="LK3-3e-elD"/>
+                            <constraint firstItem="6SF-6G-FMT" firstAttribute="leading" secondItem="FKk-wu-DMY" secondAttribute="leading" constant="28" id="O4u-V7-8e4"/>
+                            <constraint firstItem="kky-dE-kk7" firstAttribute="leading" secondItem="FKk-wu-DMY" secondAttribute="leading" constant="20" id="X3y-1O-JuL"/>
+                            <constraint firstItem="FKk-wu-DMY" firstAttribute="bottom" secondItem="9Tz-uf-zxB" secondAttribute="bottom" constant="54" id="blV-Me-FpC"/>
+                            <constraint firstItem="FKk-wu-DMY" firstAttribute="trailing" secondItem="kky-dE-kk7" secondAttribute="trailing" constant="20" id="e0G-hK-cqw"/>
+                            <constraint firstItem="FKk-wu-DMY" firstAttribute="trailing" secondItem="9Tz-uf-zxB" secondAttribute="trailing" constant="20" id="edQ-Qo-NmT"/>
+                            <constraint firstItem="FKk-wu-DMY" firstAttribute="trailing" secondItem="iMj-Dg-zdt" secondAttribute="trailing" constant="20" id="ldH-Kz-3su"/>
+                            <constraint firstItem="9Tz-uf-zxB" firstAttribute="leading" secondItem="FKk-wu-DMY" secondAttribute="leading" constant="20" id="nat-3u-kJ3"/>
+                            <constraint firstItem="4Ua-h0-Qms" firstAttribute="top" secondItem="FKk-wu-DMY" secondAttribute="top" constant="30" id="xfm-CR-sEk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FKk-wu-DMY"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="errorMessage" destination="6SF-6G-FMT" id="78s-lT-tUp"/>
+                        <outlet property="nameTextField" destination="iMj-Dg-zdt" id="0NW-ZA-Nw5"/>
+                        <outlet property="nextButton" destination="9Tz-uf-zxB" id="df6-uM-e2v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MkI-CV-MQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-818" y="2064"/>
+        </scene>
+        <!--Ob Level View Controller-->
+        <scene sceneID="qVe-zB-1nt">
+            <objects>
+                <viewController storyboardIdentifier="ObLevelViewController" id="Yg6-aC-EeL" customClass="ObLevelViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ylB-IX-QtL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IU6-74-YbW">
+                                <rect key="frame" x="20" y="132" width="335" height="57.5"/>
+                                <string key="text">Sélectionnez votre niveau 
+écolo</string>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f4x-XC-v2B">
+                                <rect key="frame" x="111" y="221.5" width="153" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="jYM-Z5-Gf5"/>
+                                    <constraint firstAttribute="width" constant="153" id="t4A-G5-tqE"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="5aY-yV-DZ0" customClass="PickleSlider" customModule="PicklePOC" customModuleProvider="target">
+                                <rect key="frame" x="18" y="466.5" width="339" height="31"/>
+                                <color key="tintColor" name="pickleColor-lightGreen"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackWidth">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="Yg6-aC-EeL" eventType="valueChanged" id="48Q-YL-x1o"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeune pousse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJj-kz-nsp">
+                                <rect key="frame" x="20" y="532.5" width="335" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
+                                <color key="textColor" name="pickleColor-darkBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68k-z7-YXB">
+                                <rect key="frame" x="20" y="562" width="335" height="101.5"/>
+                                <string key="text">Dum haec in oriente aguntur, Arelate hiemem agens Constantius post theatralis ludos atque circenses ambitioso editos apparatu diem sextum idus Octobres.</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                <color key="textColor" name="pickeColor-grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-mQ-gnO" customClass="PickleButton" customModule="PicklePOC" customModuleProvider="target">
+                                <rect key="frame" x="20" y="702" width="335" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="6Pg-dL-KEo"/>
+                                </constraints>
+                                <state key="normal" title="Commencer l'expérience"/>
+                                <connections>
+                                    <action selector="goToMissionsList" destination="Yg6-aC-EeL" eventType="touchUpInside" id="csE-Nh-vi8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FJj-kz-nsp" firstAttribute="top" secondItem="5aY-yV-DZ0" secondAttribute="bottom" constant="36" id="375-X4-SsW"/>
+                            <constraint firstItem="IU6-74-YbW" firstAttribute="top" secondItem="udY-kZ-qqx" secondAttribute="top" constant="88" id="4OH-gW-ihp"/>
+                            <constraint firstItem="udY-kZ-qqx" firstAttribute="trailing" secondItem="IU6-74-YbW" secondAttribute="trailing" constant="20" id="57e-lC-nmq"/>
+                            <constraint firstItem="FJj-kz-nsp" firstAttribute="leading" secondItem="udY-kZ-qqx" secondAttribute="leading" constant="20" id="9D5-Ac-2MX"/>
+                            <constraint firstItem="f4x-XC-v2B" firstAttribute="centerX" secondItem="ylB-IX-QtL" secondAttribute="centerX" id="BES-AA-c5Z"/>
+                            <constraint firstItem="68k-z7-YXB" firstAttribute="top" secondItem="FJj-kz-nsp" secondAttribute="bottom" constant="8" id="Bf3-k1-42R"/>
+                            <constraint firstItem="IU6-74-YbW" firstAttribute="leading" secondItem="udY-kZ-qqx" secondAttribute="leading" constant="20" id="Dox-aN-YJb"/>
+                            <constraint firstItem="68k-z7-YXB" firstAttribute="leading" secondItem="udY-kZ-qqx" secondAttribute="leading" constant="20" id="KlS-z8-gNT"/>
+                            <constraint firstItem="udY-kZ-qqx" firstAttribute="trailing" secondItem="68k-z7-YXB" secondAttribute="trailing" constant="20" id="Rme-vB-pA1"/>
+                            <constraint firstItem="udY-kZ-qqx" firstAttribute="bottom" secondItem="hWC-mQ-gnO" secondAttribute="bottom" constant="20" id="Vp9-o5-IRr"/>
+                            <constraint firstItem="hWC-mQ-gnO" firstAttribute="leading" secondItem="udY-kZ-qqx" secondAttribute="leading" constant="20" id="acz-6e-rWe"/>
+                            <constraint firstItem="5aY-yV-DZ0" firstAttribute="top" secondItem="f4x-XC-v2B" secondAttribute="bottom" constant="45" id="ddf-oI-Bv0"/>
+                            <constraint firstItem="5aY-yV-DZ0" firstAttribute="leading" secondItem="udY-kZ-qqx" secondAttribute="leading" constant="20" id="jIT-tC-zz2"/>
+                            <constraint firstItem="udY-kZ-qqx" firstAttribute="trailing" secondItem="5aY-yV-DZ0" secondAttribute="trailing" constant="20" id="qwU-hG-C7c"/>
+                            <constraint firstItem="udY-kZ-qqx" firstAttribute="trailing" secondItem="FJj-kz-nsp" secondAttribute="trailing" constant="20" id="rWi-ow-L9h"/>
+                            <constraint firstItem="f4x-XC-v2B" firstAttribute="top" secondItem="IU6-74-YbW" secondAttribute="bottom" constant="32" id="sBv-l2-bpI"/>
+                            <constraint firstItem="udY-kZ-qqx" firstAttribute="trailing" secondItem="hWC-mQ-gnO" secondAttribute="trailing" constant="20" id="voZ-0b-i2G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="udY-kZ-qqx"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="avatar" destination="f4x-XC-v2B" id="NBe-SZ-FR9"/>
+                        <outlet property="levelDesc" destination="68k-z7-YXB" id="6nv-id-9On"/>
+                        <outlet property="levelName" destination="FJj-kz-nsp" id="BPT-qE-csF"/>
+                        <outlet property="slider" destination="5aY-yV-DZ0" id="Y5P-nV-kYP"/>
+                        <outlet property="startButton" destination="hWC-mQ-gnO" id="5IU-c0-mK3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgo-Xs-cTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-818" y="3085"/>
+        </scene>
+        <!--Ob Avatar View Controller-->
+        <scene sceneID="me2-rz-csm">
+            <objects>
+                <viewController storyboardIdentifier="ObAvatarViewController" id="hxH-Fs-5e0" customClass="ObAvatarViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGx-ph-VGU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quelle est la jeune pousse qui vous correspond le plus ?" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zto-hf-cXK">
+                                <rect key="frame" x="20" y="132" width="335" height="57.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdj-h3-mhz">
+                                <rect key="frame" x="0.0" y="243.5" width="375" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vdj-h3-mhz" secondAttribute="height" multiplier="125:128" id="Bqw-x4-Y4n"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="yCL-pJ-VIl" kind="embed" id="OXM-cG-Wuy"/>
+                                </connections>
+                            </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="9pK-NB-zcL">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXt-x5-MDu" customClass="PickleButton" customModule="PicklePOC" customModuleProvider="target">
+                                <rect key="frame" x="20" y="669" width="336" height="55"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.10980392160000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="pvD-pK-6ug"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal" title="Choisir">
+                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToNameChoiceWithSender:" destination="hxH-Fs-5e0" eventType="touchUpInside" id="qVe-lw-suh"/>
+                                    <segue destination="Klb-u1-sGO" kind="show" id="Kmn-s8-yVi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kXt-x5-MDu" firstAttribute="top" secondItem="9pK-NB-zcL" secondAttribute="bottom" constant="22" id="1Jo-Fq-4cM"/>
+                            <constraint firstItem="Zto-hf-cXK" firstAttribute="top" secondItem="l2y-jp-gtF" secondAttribute="top" constant="88" id="32d-pa-oL3"/>
+                            <constraint firstItem="9pK-NB-zcL" firstAttribute="leading" secondItem="l2y-jp-gtF" secondAttribute="leading" constant="168" id="C6P-Ru-GNx"/>
+                            <constraint firstItem="l2y-jp-gtF" firstAttribute="bottom" secondItem="kXt-x5-MDu" secondAttribute="bottom" constant="54" id="G2x-Gx-kok"/>
+                            <constraint firstItem="Vdj-h3-mhz" firstAttribute="top" secondItem="Zto-hf-cXK" secondAttribute="bottom" constant="54" id="Onp-UL-e5h"/>
+                            <constraint firstItem="kXt-x5-MDu" firstAttribute="leading" secondItem="l2y-jp-gtF" secondAttribute="leading" constant="20" id="Rl3-JF-IP4"/>
+                            <constraint firstItem="Vdj-h3-mhz" firstAttribute="leading" secondItem="l2y-jp-gtF" secondAttribute="leading" id="Xwb-ZR-C2F"/>
+                            <constraint firstItem="l2y-jp-gtF" firstAttribute="trailing" secondItem="Zto-hf-cXK" secondAttribute="trailing" constant="20" id="eQ7-3R-sn2"/>
+                            <constraint firstItem="Vdj-h3-mhz" firstAttribute="trailing" secondItem="l2y-jp-gtF" secondAttribute="trailing" id="eje-yY-n6F"/>
+                            <constraint firstItem="l2y-jp-gtF" firstAttribute="trailing" secondItem="kXt-x5-MDu" secondAttribute="trailing" constant="19" id="p6Q-DH-r3n"/>
+                            <constraint firstItem="l2y-jp-gtF" firstAttribute="trailing" secondItem="9pK-NB-zcL" secondAttribute="trailing" constant="168" id="qFt-0X-RpD"/>
+                            <constraint firstItem="Zto-hf-cXK" firstAttribute="leading" secondItem="l2y-jp-gtF" secondAttribute="leading" constant="20" id="wcE-rA-bfC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l2y-jp-gtF"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="chooseButton" destination="kXt-x5-MDu" id="2AS-CZ-dhN"/>
+                        <outlet property="pageControl" destination="9pK-NB-zcL" id="jLb-VK-SCU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9i-ze-fta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-818.39999999999998" y="1094.7526236881561"/>
+        </scene>
+        <!--Ob Avatar Page View Controller-->
+        <scene sceneID="y5T-ur-4Pf">
+            <objects>
+                <pageViewController storyboardIdentifier="ObAvatarPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="yCL-pJ-VIl" customClass="ObAvatarPageViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9d-M6-ooq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-62" y="1030"/>
+        </scene>
+        <!--Ob Avatar Content View Controller-->
+        <scene sceneID="vh6-o9-jij">
+            <objects>
+                <viewController storyboardIdentifier="ObAvatarContentViewController" id="TEf-6z-5BB" customClass="ObAvatarContentViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gn8-dd-WFc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ft-qc-42B">
+                                <rect key="frame" x="57" y="44" width="260" height="340"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2Ft-qc-42B" secondAttribute="height" multiplier="13:17" id="BIZ-OZ-eB0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Ft-qc-42B" firstAttribute="leading" secondItem="DlJ-Wp-x7l" secondAttribute="leading" constant="57" id="FgG-Sn-fHo"/>
+                            <constraint firstItem="2Ft-qc-42B" firstAttribute="top" secondItem="DlJ-Wp-x7l" secondAttribute="top" id="QUO-oy-OLi"/>
+                            <constraint firstItem="DlJ-Wp-x7l" firstAttribute="trailing" secondItem="2Ft-qc-42B" secondAttribute="trailing" constant="58" id="qIA-JT-SgR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DlJ-Wp-x7l"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="340"/>
+                    <connections>
+                        <outlet property="avatar" destination="2Ft-qc-42B" id="OaN-7d-CvB"/>
+                        <outlet property="pageControl" destination="9pK-NB-zcL" id="a5o-qS-mst"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Hw-DM-uu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="1030"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="pickeColor-grey">
+            <color red="0.52156862745098043" green="0.52156862745098043" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pickleColor-darkBlue">
+            <color red="0.12999999523162842" green="0.10999999940395355" blue="0.30000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pickleColor-lightGreen">
+            <color red="0.60392156862745094" green="0.92941176470588238" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
