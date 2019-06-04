@@ -52,6 +52,7 @@ public struct Mission : Codable {
     public var explanations: String?
     public var tips : [String]?
     public var elo : Elo
+    public var results: String?
     
     public init(id: UUID?,
                 duration: Int?,

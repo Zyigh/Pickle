@@ -9,44 +9,6 @@
 import Foundation
 import UIKit
 
-class MissionsTest {
-    static let missions : [Mission] = [
-        Mission(
-            id: UUID(),
-            duration: 3,
-            description: "Mission longue",
-            image: "https://specials-images.forbesimg.com/imageserve/5ceacb3e142c500008f3bead/416x416.jpg",
-            mainSubject: "Energy",
-            explanations: "Faire une mission longue",
-            tips: ["tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1tip1", "tip2"], elo: Elo(energy: 8, waste: 42, food: 12)
-        ), Mission(
-            id: UUID(),
-            duration: 0,
-            description: "Mission Courte 1",
-            image: "https://www.billboard.com/files/styles/article_main_image/public/stylus/2611009-taylor-swift-Brian-Doben-617-409.jpg",
-            mainSubject: "waste",
-            explanations: "Faire une mission courte",
-            tips: ["Faire", "Une", "Mission", "Courte"], elo: Elo(energy: 8, waste: 42, food: 12)
-        ), Mission(
-            id: UUID(),
-            duration: 0,
-            description: "Mission Courte 2",
-            image: "https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2012/09/taylor_swift_vma.jpg",
-            mainSubject: "energy",
-            explanations: "Faire une mission courte energy",
-            tips: ["Faire", "Une", "Mission", "Courte", "Energy"], elo: Elo(energy: 8, waste: 42, food: 12)
-        ), Mission(
-            id: UUID(),
-            duration: 0,
-            description: "Mission Courte 3",
-            image: "https://i.pinimg.com/originals/eb/04/50/eb04504c222c39972d9fb10c3e9e6549.jpg",
-            mainSubject: "food",
-            explanations: "MANGER MIEUX",
-            tips: ["Bouffe"], elo: Elo(energy: 8, waste: 42, food: 12)
-        )
-    ]
-}
-
 class MissionsViewController: UIViewController {
     
     @IBOutlet weak var longMissionDuration: UILabel!
@@ -57,6 +19,20 @@ class MissionsViewController: UIViewController {
     @IBOutlet weak var shortMissionList: UICollectionView!
     var shortMissions = [Mission]()
     var longMission: Mission? = nil
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let ud = UserDefaults()
+        if nil == ud.getValue(key: "uuid") {
+            present("ObIntroViewController", storyboard: "Onboarding", bundle: nil) {
+                ctrl in
+                
+                guard let ctrl = ctrl as? ObIntroViewController else { print("bug"); return }
+                ctrl.uuid = UUID()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupSubscribeView" customModule="gaiaApp" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="UOz-3A-1Ct" id="R0x-BJ-VyJ"/>
+                <outlet property="parentView" destination="iN0-l3-epB" id="a2E-gH-RuD"/>
+                <outlet property="popupMsg" destination="eAb-ZT-hZ8" id="8Cb-7O-aVJ"/>
+                <outlet property="popupTitle" destination="Lyf-Xw-jxd" id="VXO-ka-Df2"/>
+                <outlet property="popupView" destination="NhG-si-Sae" id="zU7-tD-A0s"/>
+                <outlet property="subscribeBtn" destination="b0h-52-trF" id="jab-fu-zv5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvH-dc-HxB">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhG-si-Sae" userLabel="Popup view">
+                            <rect key="frame" x="1" y="465" width="373" height="347"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-ZT-hZ8">
+                                    <rect key="frame" x="19" y="113.5" width="335" height="63"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="63" id="YoY-Hh-lwI"/>
+                                    </constraints>
+                                    <string key="text">Afin de ne pas perdre votre progression 
+et de bénéficier de nombreux avantages, inscrivez-vous.</string>
+                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                    <color key="textColor" name="pickeColor-grey"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0h-52-trF" customClass="PickleButton" customModule="gaiaApp" customModuleProvider="target">
+                                    <rect key="frame" x="19" y="208.5" width="335" height="56"/>
+                                    <color key="backgroundColor" name="pickleColor-darkBlue"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="56" id="BCm-R3-VtM"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="16"/>
+                                    <state key="normal" title="Je m'inscris">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClickSubscribe:" destination="-1" eventType="touchUpInside" id="ipu-JA-JcN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOz-3A-1Ct" customClass="PickleButton" customModule="gaiaApp" customModuleProvider="target">
+                                    <rect key="frame" x="19" y="272.5" width="335" height="56"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="56" id="Ki1-Yx-Dvb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="16"/>
+                                    <state key="normal" title="Ça va trop vite entre nous...">
+                                        <color key="titleColor" name="pickleColor-darkBlue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClickBack:" destination="-1" eventType="touchUpInside" id="pqX-3Y-JoQ"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gardez votre progression à l'abri !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyf-Xw-jxd">
+                                    <rect key="frame" x="19" y="32" width="335" height="57.5"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
+                                    <color key="textColor" name="pickleColor-darkBlue"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="UOz-3A-1Ct" secondAttribute="trailing" constant="19" id="I6B-XA-7Dr"/>
+                                <constraint firstItem="Lyf-Xw-jxd" firstAttribute="top" secondItem="NhG-si-Sae" secondAttribute="top" constant="32" id="J8T-5t-NbM"/>
+                                <constraint firstItem="UOz-3A-1Ct" firstAttribute="leading" secondItem="NhG-si-Sae" secondAttribute="leading" constant="19" id="JJ9-Qh-sf4"/>
+                                <constraint firstAttribute="trailing" secondItem="eAb-ZT-hZ8" secondAttribute="trailing" constant="19" id="PEh-pV-73f"/>
+                                <constraint firstAttribute="trailing" secondItem="Lyf-Xw-jxd" secondAttribute="trailing" constant="19" id="RCd-z6-nNx"/>
+                                <constraint firstItem="eAb-ZT-hZ8" firstAttribute="top" secondItem="Lyf-Xw-jxd" secondAttribute="bottom" constant="24" id="Swj-6b-kmW"/>
+                                <constraint firstItem="UOz-3A-1Ct" firstAttribute="top" secondItem="b0h-52-trF" secondAttribute="bottom" constant="8" id="VyW-Hc-JOO"/>
+                                <constraint firstItem="eAb-ZT-hZ8" firstAttribute="leading" secondItem="NhG-si-Sae" secondAttribute="leading" constant="19" id="XC4-5s-5yy"/>
+                                <constraint firstItem="Lyf-Xw-jxd" firstAttribute="leading" secondItem="NhG-si-Sae" secondAttribute="leading" constant="19" id="an0-jk-43F"/>
+                                <constraint firstAttribute="trailing" secondItem="b0h-52-trF" secondAttribute="trailing" constant="19" id="gLm-c2-so8"/>
+                                <constraint firstItem="b0h-52-trF" firstAttribute="leading" secondItem="NhG-si-Sae" secondAttribute="leading" constant="19" id="pzI-na-hys"/>
+                                <constraint firstItem="b0h-52-trF" firstAttribute="top" secondItem="eAb-ZT-hZ8" secondAttribute="bottom" constant="32" id="xIX-Qq-Yg8"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.58431372549019611" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="NhG-si-Sae" secondAttribute="trailing" constant="1" id="YCK-rg-AN3"/>
+                        <constraint firstAttribute="bottom" secondItem="NhG-si-Sae" secondAttribute="bottom" id="vbt-FH-hLD"/>
+                        <constraint firstItem="NhG-si-Sae" firstAttribute="leading" secondItem="cvH-dc-HxB" secondAttribute="leading" constant="1" id="wNV-x2-lWq"/>
+                        <constraint firstItem="NhG-si-Sae" firstAttribute="top" secondItem="cvH-dc-HxB" secondAttribute="top" constant="465" id="xsB-x1-kA9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cvH-dc-HxB" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3mL-iA-IuX"/>
+                <constraint firstItem="cvH-dc-HxB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Q77-VQ-Ljd"/>
+                <constraint firstItem="cvH-dc-HxB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="aUi-BQ-I0K"/>
+                <constraint firstItem="cvH-dc-HxB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sJk-Gr-oNY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="52" y="84.107946026986511"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="pickeColor-grey">
+            <color red="0.52156862745098043" green="0.52156862745098043" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pickleColor-darkBlue">
+            <color red="0.12999999523162842" green="0.10999999940395355" blue="0.30000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
