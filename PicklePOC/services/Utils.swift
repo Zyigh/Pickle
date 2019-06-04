@@ -14,10 +14,12 @@ class Utils {
 }
 
 extension UIViewController {
-    func present(_ id: String, storyboard: String = "Main", bundle: Bundle? = nil, completion: (()->Void)? = nil) {
+    func present(_ id: String, storyboard: String = "Main", bundle: Bundle? = nil, _ controllerAccess: ((UIViewController)->Void)) {
         let st = UIStoryboard(name: storyboard, bundle: bundle)
-        let view = st.instantiateViewController(withIdentifier: id)
-        present(view, animated: true, completion: completion)
+        let viewCtrl = st.instantiateViewController(withIdentifier: id)
+        controllerAccess(viewCtrl)
+        
+        present(viewCtrl, animated: true, completion: nil)
     }
 }
 

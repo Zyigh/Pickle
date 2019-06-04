@@ -16,20 +16,49 @@ struct ShortMission {
 }
 
 class ShortMissionCell: UICollectionViewCell {
-    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var title: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var mission: Mission? = nil
+
+    public func configure(with model: Mission) {
+        // Will be used to display single
+        mission = model
+        if let imageName = model.image,
+           let u = URL(string: "\(ApiConnexion.baseUrl)/\(imageName)"),
+           let d = try? Data(contentsOf: u) {
+            image.image = UIImage(data: d)
+        } else {
+            image.image = UIImage(imageLiteralResourceName: "pickle-logo")
+        }
+        
+        category.text = model.mainSubject
+        title.text = model.description
     }
     
-    public func configure(with model: ShortMission) {
-        if let i = model.image {
-            image.image = i
+    @objc func missionTap(gesture: UITapGestureRecognizer) {
+        if let missionCtrl = parentViewController as? MissionsViewController {
+            missionCtrl.present("single", storyboard: "Main", bundle: nil) {
+                ctrl in
+                
+                if let ctrl = ctrl as? SingleMissionController {
+                    ctrl.mission = self.mission
+                }
+            }
         }
-        category.text = model.category
-        title.text = model.title
+    }
+}
+
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
     }
 }

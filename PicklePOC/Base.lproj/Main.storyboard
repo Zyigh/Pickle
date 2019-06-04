@@ -101,7 +101,6 @@
                             </label>
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="electronics" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Blj-DT-jDJ">
                                 <rect key="frame" x="26" y="153" width="362" height="226"/>
-                                <color key="backgroundColor" name="pickleColor-pink"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="226" id="BfY-cr-MGR"/>
                                 </constraints>
@@ -170,17 +169,20 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="shortmission" id="zB7-IL-ObI" customClass="ShortMissionCell" customModule="PicklePOC" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="shortmission" reuseIdentifier="shortmissioncell" id="zB7-IL-ObI" customClass="ShortMissionCell" customModule="PicklePOC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="228" height="196"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="228" height="196"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDL-Yi-ORI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="228" height="132"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="electronics" translatesAutoresizingMaskIntoConstraints="NO" id="KDL-Yi-ORI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="228" height="134"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="134" id="J49-bu-o0C"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ÉNERGIE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn0-FM-8Ou">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ÉNERGIE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn0-FM-8Ou">
                                                     <rect key="frame" x="16" y="140" width="55" height="15"/>
                                                     <color key="backgroundColor" name="pickleColor-purple"/>
                                                     <constraints>
@@ -191,7 +193,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Titre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W6-IL-YfY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W6-IL-YfY">
                                                     <rect key="frame" x="16" y="161" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -203,18 +205,25 @@
                                             <constraint firstAttribute="trailing" secondItem="KDL-Yi-ORI" secondAttribute="trailing" id="1W3-Th-Nqz"/>
                                             <constraint firstItem="KDL-Yi-ORI" firstAttribute="top" secondItem="zB7-IL-ObI" secondAttribute="top" id="2n1-qO-T2i"/>
                                             <constraint firstItem="kn0-FM-8Ou" firstAttribute="top" secondItem="KDL-Yi-ORI" secondAttribute="bottom" constant="6" id="36j-G9-rqQ"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="1W6-IL-YfY" secondAttribute="bottom" constant="6" id="6aC-DJ-hLB"/>
                                             <constraint firstItem="KDL-Yi-ORI" firstAttribute="leading" secondItem="zB7-IL-ObI" secondAttribute="leading" id="OBg-aT-4sy"/>
                                             <constraint firstItem="1W6-IL-YfY" firstAttribute="top" secondItem="kn0-FM-8Ou" secondAttribute="bottom" constant="6" id="UXe-7F-SPd"/>
                                             <constraint firstItem="1W6-IL-YfY" firstAttribute="leading" secondItem="zB7-IL-ObI" secondAttribute="leadingMargin" constant="8" id="dtU-ih-7ZZ"/>
                                             <constraint firstItem="kn0-FM-8Ou" firstAttribute="leading" secondItem="zB7-IL-ObI" secondAttribute="leadingMargin" constant="8" id="fqp-kF-n5g"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="kn0-FM-8Ou" secondAttribute="trailing" constant="149" id="oty-xG-zy4"/>
                                         </constraints>
+                                        <size key="customSize" width="228" height="196"/>
                                         <connections>
                                             <outlet property="category" destination="kn0-FM-8Ou" id="aqe-1n-vJn"/>
-                                            <outlet property="image" destination="KDL-Yi-ORI" id="OVh-wE-Lcy"/>
+                                            <outlet property="image" destination="KDL-Yi-ORI" id="4cf-8y-eY8"/>
                                             <outlet property="title" destination="1W6-IL-YfY" id="AM6-BD-Gk2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hWT-2f-oea"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Fwd-d6-vRf"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,8 +251,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Missions" image="ic-missions--active" selectedImage="ic-missions" id="EZ1-ap-0y3"/>
                     <connections>
-                        <outlet property="longMission" destination="Blj-DT-jDJ" id="2bo-F3-cUB"/>
                         <outlet property="longMissionDuration" destination="zRq-sf-FWU" id="Dx7-7D-afb"/>
+                        <outlet property="longMissionImage" destination="Blj-DT-jDJ" id="5ne-fi-fwi"/>
                         <outlet property="longMissionTitle" destination="qL8-Hj-o2Z" id="Row-YO-fZk"/>
                         <outlet property="longMissionType" destination="gqB-Ix-aSl" id="LLc-MF-hAc"/>
                         <outlet property="shortMissionList" destination="P6F-X3-bAo" id="sQl-Zy-CYV"/>
@@ -264,7 +273,9 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="electronics" translatesAutoresizingMaskIntoConstraints="NO" id="PCd-kY-43P">
                                 <rect key="frame" x="0.0" y="44" width="414" height="210"/>
-                                <color key="backgroundColor" name="pickleColor-pink"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="J4f-E4-JlH"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ÉNERGIE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBX-lJ-NMI">
                                 <rect key="frame" x="24" y="271" width="62" height="24"/>
@@ -294,7 +305,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Quelques pickles..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-rT-3AD">
-                                <rect key="frame" x="24" y="515.5" width="366" height="21"/>
+                                <rect key="frame" x="24" y="499.5" width="366" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -341,52 +352,40 @@
                                     <constraint firstAttribute="bottom" secondItem="Cm0-dq-wvb" secondAttribute="bottom" constant="16" id="2bt-OD-fKU"/>
                                     <constraint firstItem="Cm0-dq-wvb" firstAttribute="top" secondItem="Q13-8x-3gY" secondAttribute="top" constant="16" id="2rB-cO-BVj"/>
                                     <constraint firstAttribute="trailing" secondItem="hrK-NN-XgD" secondAttribute="trailing" constant="16" id="BcS-lM-0IY"/>
+                                    <constraint firstItem="hrK-NN-XgD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cm0-dq-wvb" secondAttribute="trailing" constant="3" id="RkU-vD-XEx"/>
                                     <constraint firstItem="Cm0-dq-wvb" firstAttribute="leading" secondItem="Q13-8x-3gY" secondAttribute="leading" constant="20" id="ddd-p2-BjN"/>
+                                    <constraint firstAttribute="trailing" secondItem="hrK-NN-XgD" secondAttribute="trailing" constant="16" id="ddq-CY-hin"/>
                                     <constraint firstAttribute="bottom" secondItem="hrK-NN-XgD" secondAttribute="bottom" constant="16" id="eVK-b4-lPd"/>
                                     <constraint firstAttribute="height" constant="88" id="viD-oP-Ja6"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jxB-cY-wfm">
-                                <rect key="frame" x="24" y="544.5" width="366" height="139.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jxB-cY-wfm">
+                                <rect key="frame" x="24" y="528.5" width="366" height="237.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="C7d-lY-h2z" customClass="PickleCell" customModule="PicklePOC" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="picklecell" id="C7d-lY-h2z" customClass="PickleCell" customModule="PicklePOC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="366" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C7d-lY-h2z" id="llX-3V-TI5">
                                             <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewn-He-mmN">
-                                                    <rect key="frame" x="20" y="11" width="40" height="40"/>
-                                                    <color key="backgroundColor" name="pickleColor-purple"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="8bT-Xh-jra"/>
-                                                        <constraint firstAttribute="height" constant="40" id="NAM-ed-dWj"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyg-oT-82U">
-                                                    <rect key="frame" x="76" y="0.0" width="290" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyg-oT-82U">
+                                                    <rect key="frame" x="56" y="16" width="310" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Jyg-oT-82U" firstAttribute="top" secondItem="llX-3V-TI5" secondAttribute="top" id="E77-MG-AN2"/>
-                                                <constraint firstItem="Ewn-He-mmN" firstAttribute="top" secondItem="llX-3V-TI5" secondAttribute="topMargin" id="Lyp-65-quz"/>
-                                                <constraint firstItem="Jyg-oT-82U" firstAttribute="leading" secondItem="Ewn-He-mmN" secondAttribute="trailing" constant="16" id="T5Z-dQ-inH"/>
+                                                <constraint firstItem="Jyg-oT-82U" firstAttribute="top" secondItem="llX-3V-TI5" secondAttribute="top" constant="16" id="E77-MG-AN2"/>
+                                                <constraint firstItem="Jyg-oT-82U" firstAttribute="leading" secondItem="llX-3V-TI5" secondAttribute="leading" constant="56" id="Efs-41-bMH"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jyg-oT-82U" secondAttribute="trailing" id="dVf-Tm-usk"/>
-                                                <constraint firstAttribute="bottom" secondItem="Jyg-oT-82U" secondAttribute="bottom" id="hpc-ar-U1p"/>
-                                                <constraint firstItem="Ewn-He-mmN" firstAttribute="leading" secondItem="llX-3V-TI5" secondAttribute="leadingMargin" id="vWD-sE-AZg"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jyg-oT-82U" secondAttribute="bottom" constant="16" id="hpc-ar-U1p"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="pickleContentLabel" destination="Jyg-oT-82U" id="5Ga-A0-cz1"/>
-                                            <outlet property="rowNumberLabel" destination="Ewn-He-mmN" id="Zz7-vE-gEn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -399,11 +398,11 @@
                             <constraint firstItem="jxB-cY-wfm" firstAttribute="top" secondItem="ELb-rT-3AD" secondAttribute="bottom" constant="8" id="A9v-C1-WSg"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="top" secondItem="XYL-dw-v2z" secondAttribute="top" id="FHT-XY-Cam"/>
                             <constraint firstItem="Q13-8x-3gY" firstAttribute="bottom" secondItem="XYL-dw-v2z" secondAttribute="bottom" id="GEi-DP-5nc"/>
-                            <constraint firstItem="Q13-8x-3gY" firstAttribute="top" secondItem="jxB-cY-wfm" secondAttribute="bottom" constant="90" id="GL3-bd-oVd"/>
+                            <constraint firstItem="Q13-8x-3gY" firstAttribute="top" secondItem="jxB-cY-wfm" secondAttribute="bottom" constant="8" id="GL3-bd-oVd"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="top" secondItem="XYL-dw-v2z" secondAttribute="top" id="L9a-4L-iMR"/>
                             <constraint firstItem="fBX-lJ-NMI" firstAttribute="top" secondItem="PCd-kY-43P" secondAttribute="bottom" constant="17" id="LoH-oZ-cuf"/>
                             <constraint firstItem="Qu8-T2-vZD" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="Ubd-sd-Net"/>
-                            <constraint firstItem="ELb-rT-3AD" firstAttribute="top" secondItem="K7l-4m-qRn" secondAttribute="bottom" constant="40" id="VCr-SR-z6y"/>
+                            <constraint firstItem="ELb-rT-3AD" firstAttribute="top" secondItem="K7l-4m-qRn" secondAttribute="bottom" constant="24" id="VCr-SR-z6y"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" id="Y83-zH-gnt"/>
                             <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="jxB-cY-wfm" secondAttribute="trailing" constant="24" id="bTn-SU-00s"/>
                             <constraint firstItem="ELb-rT-3AD" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="dbo-2p-gB0"/>
@@ -426,6 +425,10 @@
                     </view>
                     <connections>
                         <outlet property="acceptButton" destination="hrK-NN-XgD" id="mxu-OS-Ksl"/>
+                        <outlet property="missionDesc" destination="K7l-4m-qRn" id="XpV-RL-ipl"/>
+                        <outlet property="missionImage" destination="PCd-kY-43P" id="fDF-ZV-u8A"/>
+                        <outlet property="missionTitle" destination="Qu8-T2-vZD" id="YyG-VX-dsp"/>
+                        <outlet property="missionType" destination="fBX-lJ-NMI" id="SHs-ze-gWq"/>
                         <outlet property="passerButton" destination="Cm0-dq-wvb" id="MBT-po-hN0"/>
                         <outlet property="picklesList" destination="jxB-cY-wfm" id="uDV-tY-hR7"/>
                     </connections>
@@ -445,9 +448,6 @@
         <image name="ic-stats--active" width="24" height="24"/>
         <namedColor name="pickleColor-darkBlue">
             <color red="0.12999999523162842" green="0.10999999940395355" blue="0.30000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="pickleColor-pink">
-            <color red="1" green="0.83137254901960789" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pickleColor-purple">
             <color red="0.396078431372549" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -45,7 +45,7 @@ public struct User : Codable {
 public struct Mission : Codable {
     public var id: UUID?
     //    let duration: DateInterval?
-    public var duration: String?
+    public var duration: Int?
     public var description: String?
     public var image: String?
     public var mainSubject: String?
@@ -54,7 +54,7 @@ public struct Mission : Codable {
     public var elo : Elo
     
     public init(id: UUID?,
-                duration: String?,
+                duration: Int?,
                 description: String?,
                 image: String?,
                 mainSubject: String?,
@@ -86,5 +86,17 @@ public struct Elo : Codable {
         self.energy = energy
         self.waste = waste
         self.food = food
+    }
+}
+
+infix operator ==
+extension Mission {
+    public static func == (_ lhs: Mission, _ rhs: Mission) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+extension User {
+    public static func == (_ lhs: User, _ rhs: User) -> Bool {
+        return lhs.id == rhs.id
     }
 }

@@ -16,10 +16,22 @@ struct PickleContent {
 class PickleCell: UITableViewCell {
     
     @IBOutlet weak var pickleContentLabel: UILabel!
-    @IBOutlet weak var rowNumberLabel: UILabel!
     
+    var textLayer: CATextLayer!
+        
     override func awakeFromNib() {
         super.awakeFromNib()
-        rowNumberLabel.layer.cornerRadius = CGFloat(100.0)
+        
+        textLayer = CATextLayer()
+        textLayer.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        textLayer.alignmentMode = CATextLayerAlignmentMode.center
+        textLayer.backgroundColor = UIColor.picklePurple.cgColor
+        textLayer.cornerRadius = textLayer.frame.height / 2.0
+//        textLayer.font = UIFont(name: "SF Pro Display Semibold", size: 18.0)
+        textLayer.fontSize = 18.0
+        
+        self.layer.addSublayer(textLayer)
     }
 }
+
+
