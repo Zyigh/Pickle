@@ -11,7 +11,7 @@ import Foundation
 class ApiConnexion {
     private init(){}
     private static var network = Network(delegate: ApiConnexion())
-    static let baseUrl = "http://10.93.182.93"
+    static let baseUrl = "http://51.159.28.118"
     private static let defaultUserId = "2DEB7967-0148-48C7-BE5D-191E1F5CD42D"
     
     static func getMissions(_ completion: @escaping (Network.ApiResponse) -> Void) {
