@@ -71,6 +71,23 @@ public struct Mission : Codable {
         self.tips  = tips
         self.elo  = elo
     }
+    
+    public func mainSubjectToFrench() -> String? {
+        var french: String? = nil
+        if let subject = mainSubject,
+           let cat = eloCategory(rawValue: subject) {
+            switch cat {
+            case .energy:
+                french = "ÉNERGIE"
+            case .waste:
+                french = "0 DÉCHET"
+            case .food:
+                french = "ALIMENTATION"
+            }
+        }
+        
+        return french
+    }
 }
 
 public struct Elo : Codable {
@@ -87,6 +104,10 @@ public struct Elo : Codable {
         self.waste = waste
         self.food = food
     }
+}
+
+enum eloCategory : String {
+    case energy, waste, food
 }
 
 infix operator ==

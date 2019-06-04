@@ -105,9 +105,9 @@ class MissionsViewController: UIViewController {
            let d = try? Data(contentsOf: u) {
             longMissionImage.image = UIImage(data: d)
         } else {
-            print("\(ApiConnexion.baseUrl)/\(mission.image)")
+            print("\(ApiConnexion.baseUrl)/\(mission.image ?? "")")
         }
-        longMissionType.text = mission.mainSubject
+        longMissionType.text = mission.mainSubjectToFrench()
         longMissionTitle.text = mission.description
         Tap.addTapGesture(view: longMissionImage, target: self, action: #selector(missionTap))
     }

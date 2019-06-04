@@ -50,7 +50,7 @@ class SingleMissionController: UIViewController {
             }
         }
         
-        missionType.text = mission.mainSubject
+        missionType.text = mission.mainSubjectToFrench()
         missionDesc.text = mission.description
         missionTitle.text = mission.explanations
         

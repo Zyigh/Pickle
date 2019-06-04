@@ -33,7 +33,7 @@ class ShortMissionCell: UICollectionViewCell {
             image.image = UIImage(imageLiteralResourceName: "pickle-logo")
         }
         
-        category.text = model.mainSubject
+        category.text = model.mainSubjectToFrench()
         title.text = model.description
     }
     
