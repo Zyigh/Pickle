@@ -12,16 +12,6 @@ import UIKit
 class SingleMissionController: UIViewController {
     var mission: Mission? = nil
     @IBOutlet weak var passerButton: UIButton!
-    @IBAction func passMission(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBAction func acceptMissionAction(_ sender: UIButton) {
-        if mission?.duration == 0 {
-            PopupAcceptMissionView.instance.showPopup()
-            PopupAcceptMissionView.instance.popupMsg.text = mission?.results
-            PopupAcceptMissionView.instance.origin = self
-        }
-    }
     @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var picklesList: UITableView!
     @IBOutlet weak var missionType: UILabel!
@@ -66,6 +56,23 @@ class SingleMissionController: UIViewController {
             missionImage.image = UIImage(data: d)
         }
     }
+    
+    @IBAction func passMission(_ sender: UIButton) {
+        PopupPassMissionView.instance.showPopup()
+        PopupPassMissionView.instance.origin = self
+    }
+    
+    @IBAction func acceptMissionAction(_ sender: UIButton) {
+        if mission?.duration == 0 {
+            PopupSuccessMissionView.instance.showPopup()
+            PopupSuccessMissionView.instance.origin = self
+        } else {
+            PopupAcceptMissionView.instance.showPopup()
+            PopupAcceptMissionView.instance.popupMsg.text = mission?.results
+            PopupAcceptMissionView.instance.origin = self
+        }
+    }
+    
 }
 
 extension SingleMissionController: UITableViewDataSource, UITableViewDelegate {

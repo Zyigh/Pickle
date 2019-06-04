@@ -1,5 +1,5 @@
 //
-//  PopupPassMissionView.swift
+//  PopupSuccessMissionView.swift
 //  gaiaApp
 //
 //  Created by Molika THAI on 19/05/2019.
@@ -9,19 +9,20 @@
 import Foundation
 import UIKit
 
-class PopupPassMissionView : UIView {
+class PopupSuccessMissionView: UIView, PicklePopup {
     
-    static let instance = PopupPassMissionView()
+    static let instance = PopupSuccessMissionView()
+    var origin: UIViewController? = nil
     
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var popupTitle: UILabel!
-    @IBOutlet weak var passBtn: PickleButton!
     @IBOutlet weak var backBtn: PickleButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        Bundle.main.loadNibNamed("PopupPassMissionView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("PopupSuccessMissionView", owner: self, options: nil)
         commonInit()
     }
     
@@ -35,21 +36,16 @@ class PopupPassMissionView : UIView {
         
         parentView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         parentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        backBtn.setSecondaryButtonStyle()
     }
     
     func showPopup() {
-        self.popupTitle.text = "Êtes-vous sûr(e) de vouloir passer cette mission ?"
+        self.popupTitle.text = "Félicitations ! Continuez sur cette lancée"
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
     
-    @IBAction func onClickPass(_ sender: Any){
-        print("Passer la mission")
-    }
-    
-    @IBAction func onClickBack(_ sender: Any) {
+    @IBAction func onClickDone(_ sender: Any) {
         parentView.removeFromSuperview()
+        reloadOrigin()
     }
     
 }

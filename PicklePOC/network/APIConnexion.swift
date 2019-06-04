@@ -16,7 +16,6 @@ class ApiConnexion {
     
     static func getMissions(_ completion: @escaping (Network.ApiResponse) -> Void) {
         let u = "\(baseUrl)/\(defaultUserId)/missions/new/3"
-        print(u)
         guard let url = URL(string: u) else {
             completion(.error(Network.NetworkError.urlFormating(u)))
             return
@@ -31,7 +30,7 @@ class ApiConnexion {
         }
     }
 
-    static func createUser(_ user: User, _ completion: @escaping (Network.ApiResponse) -> Void) {
+    static func createUser(_ completion: @escaping (Network.ApiResponse) -> Void) {
         let u = "\(baseUrl)/user/new"
         guard let url = URL(string: u) else {
             completion(.error(Network.NetworkError.urlFormating(u)))

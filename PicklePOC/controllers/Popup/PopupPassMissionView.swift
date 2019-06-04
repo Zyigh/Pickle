@@ -1,28 +1,28 @@
 //
-//  PopupAcceptMissionView.swift
+//  PopupPassMissionView.swift
 //  gaiaApp
 //
-//  Created by Molika THAI on 04/06/2019.
+//  Created by Molika THAI on 19/05/2019.
 //  Copyright © 2019 hetic. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class PopupAcceptMissionView : UIView {
+class PopupPassMissionView : UIView, PicklePopup {
     
-    static let instance = PopupAcceptMissionView()
+    static let instance = PopupPassMissionView()
     var origin: UIViewController? = nil
     
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var popupTitle: UILabel!
-    @IBOutlet weak var popupMsg: UILabel!
-    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var passBtn: PickleButton!
+    @IBOutlet weak var backBtn: PickleButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        Bundle.main.loadNibNamed("PopupAcceptMissionView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("PopupPassMissionView", owner: self, options: nil)
         commonInit()
     }
     
@@ -36,23 +36,22 @@ class PopupAcceptMissionView : UIView {
         
         parentView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         parentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        backBtn.setSecondaryButtonStyle()
     }
     
     func showPopup() {
-        self.popupTitle.text = "Mission acceptée ! En réussissant cette mission vous économisez :"
+        self.popupTitle.text = "Êtes-vous sûr(e) de vouloir passer cette mission ?"
         UIApplication.shared.keyWindow?.addSubview(parentView)
+    }
+    
+    @IBAction func onClickPass(_ sender: Any){
+        parentView.removeFromSuperview()
+        reloadOrigin()
     }
     
     @IBAction func onClickBack(_ sender: Any) {
         parentView.removeFromSuperview()
-        if let origin = origin {
-            origin.dismiss(animated: true, completion: {
-                let sb = origin.storyboard?.instantiateInitialViewController()
-                if let sb = sb {
-                    sb.reloadInputViews()
-                }
-            })
-        }
     }
     
 }

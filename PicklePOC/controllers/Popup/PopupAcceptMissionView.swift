@@ -1,27 +1,28 @@
 //
-//  PopupSuccessMissionView.swift
+//  PopupAcceptMissionView.swift
 //  gaiaApp
 //
-//  Created by Molika THAI on 19/05/2019.
+//  Created by Molika THAI on 04/06/2019.
 //  Copyright © 2019 hetic. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class PopupSuccessMissionView: UIView {
+class PopupAcceptMissionView : UIView {
     
-    static let instance = PopupSuccessMissionView()
+    static let instance = PopupAcceptMissionView()
+    var origin: UIViewController? = nil
     
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var popupTitle: UILabel!
-    @IBOutlet weak var backBtn: PickleButton!
+    @IBOutlet weak var popupMsg: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        Bundle.main.loadNibNamed("PopupSuccessMissionView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("PopupAcceptMissionView", owner: self, options: nil)
         commonInit()
     }
     
@@ -38,11 +39,11 @@ class PopupSuccessMissionView: UIView {
     }
     
     func showPopup() {
-        self.popupTitle.text = "Félicitations ! Continuez sur cette lancée"
+        self.popupTitle.text = "Mission acceptée ! En réussissant cette mission vous économisez :"
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
     
-    @IBAction func onClickDone(_ sender: Any) {
+    @IBAction func onClickBack(_ sender: Any) {
         parentView.removeFromSuperview()
     }
     

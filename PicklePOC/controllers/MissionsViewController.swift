@@ -25,11 +25,17 @@ class MissionsViewController: UIViewController {
         
         let ud = UserDefaults()
         if nil == ud.getValue(key: "uuid") {
-            present("ObIntroViewController", storyboard: "Onboarding", bundle: nil) {
-                ctrl in
+            present("ObIntroViewController", storyboard: "Onboarding", bundle: nil) {_ in}
+        } else {
+            ApiConnexion.createUser() {
+                response in
                 
-                guard let ctrl = ctrl as? ObIntroViewController else { print("bug"); return }
-                ctrl.uuid = UUID()
+                switch response {
+                case .success(let user):
+                    CurrentUser.user = user as? User
+                case .error(let e):
+                    print(e)
+                }
             }
         }
     }
@@ -127,4 +133,3 @@ extension MissionsViewController: UICollectionViewDelegate, UICollectionViewData
         shortMissionList.delegate = self
     }
 }
-

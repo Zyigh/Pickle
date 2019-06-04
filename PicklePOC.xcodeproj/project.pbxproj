@@ -43,6 +43,8 @@
 		4936FAE122A6DA69001B89EA /* PopupSuccessMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAD722A6DA69001B89EA /* PopupSuccessMissionView.swift */; };
 		4936FAE222A6DA69001B89EA /* PopupAcceptMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAD822A6DA69001B89EA /* PopupAcceptMissionView.swift */; };
 		4936FAE422A6DAA3001B89EA /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAE322A6DAA3001B89EA /* Buttons.swift */; };
+		4936FAE722A71DF4001B89EA /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAE622A71DF4001B89EA /* CurrentUser.swift */; };
+		4936FAE922A72403001B89EA /* PicklePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAE822A72403001B89EA /* PicklePopup.swift */; };
 		497637AE22A4231E009B8BB9 /* ConnexionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497637AD22A4231E009B8BB9 /* ConnexionToken.swift */; };
 		49C0FAE322A43C2700FCAF6D /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */; };
 		49C0FAE522A474D400FCAF6D /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE422A474D400FCAF6D /* Tap.swift */; };
@@ -107,6 +109,8 @@
 		4936FAD722A6DA69001B89EA /* PopupSuccessMissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupSuccessMissionView.swift; sourceTree = "<group>"; };
 		4936FAD822A6DA69001B89EA /* PopupAcceptMissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupAcceptMissionView.swift; sourceTree = "<group>"; };
 		4936FAE322A6DAA3001B89EA /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		4936FAE622A71DF4001B89EA /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		4936FAE822A72403001B89EA /* PicklePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicklePopup.swift; sourceTree = "<group>"; };
 		497637AD22A4231E009B8BB9 /* ConnexionToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionToken.swift; sourceTree = "<group>"; };
 		49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
 		49C0FAE422A474D400FCAF6D /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		49307906227108D300E979BE /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4936FACA22A6DA53001B89EA /* Popup */,
 				4936FAB422A6DA24001B89EA /* ob */,
 				493078F52271076C00E979BE /* ViewController.swift */,
 				493079322271B04E00E979BE /* SingleMissionController.swift */,
@@ -199,6 +204,7 @@
 				49C0FBBF22A6C90100FCAF6D /* Sliders.swift */,
 				49C0FBC122A6C91900FCAF6D /* ProgressView.swift */,
 				4936FAE322A6DAA3001B89EA /* Buttons.swift */,
+				4936FAE622A71DF4001B89EA /* CurrentUser.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -218,7 +224,6 @@
 		4936FAB422A6DA24001B89EA /* ob */ = {
 			isa = PBXGroup;
 			children = (
-				4936FACA22A6DA53001B89EA /* Popup */,
 				4936FAC922A6DA49001B89EA /* Forms */,
 				4936FABC22A6DA2D001B89EA /* ObAvatarContentViewController.swift */,
 				4936FABB22A6DA2D001B89EA /* ObAvatarPageViewController.swift */,
@@ -254,6 +259,7 @@
 				4936FAD622A6DA69001B89EA /* PopupSubscribeView.xib */,
 				4936FAD722A6DA69001B89EA /* PopupSuccessMissionView.swift */,
 				4936FAD022A6DA69001B89EA /* PopupSuccessMissionView.xib */,
+				4936FAE822A72403001B89EA /* PicklePopup.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				4936FAC022A6DA2D001B89EA /* ObIntroPageViewController.swift in Sources */,
 				497637AE22A4231E009B8BB9 /* ConnexionToken.swift in Sources */,
 				493078F62271076C00E979BE /* ViewController.swift in Sources */,
+				4936FAE922A72403001B89EA /* PicklePopup.swift in Sources */,
 				49C0FAE322A43C2700FCAF6D /* MissionsViewController.swift in Sources */,
 				4936FAC322A6DA2D001B89EA /* ObAvatarPageViewController.swift in Sources */,
 				4936FABE22A6DA2D001B89EA /* ObLevelViewController.swift in Sources */,
@@ -369,6 +376,7 @@
 				4936FAE222A6DA69001B89EA /* PopupAcceptMissionView.swift in Sources */,
 				4930790822710AB900E979BE /* Network.swift in Sources */,
 				49C0FBBC22A6C8B100FCAF6D /* StatsHelpViewController.swift in Sources */,
+				4936FAE722A71DF4001B89EA /* CurrentUser.swift in Sources */,
 				49C0FAE922A4BCF800FCAF6D /* ShortMissionCell.swift in Sources */,
 				49C0FBBE22A6C8D800FCAF6D /* StatsMissionCollectionViewCell.swift in Sources */,
 				49C0FBC022A6C90100FCAF6D /* Sliders.swift in Sources */,
