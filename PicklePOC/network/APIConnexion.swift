@@ -11,12 +11,27 @@ import Foundation
 class ApiConnexion {
     private init(){}
     private static var network = Network(delegate: ApiConnexion())
-    static let baseUrl = "http://51.159.28.118"
+    static let baseUrl = "http://10.93.182.93:8080"
     private static let defaultUserId = "2DEB7967-0148-48C7-BE5D-191E1F5CD42D"
     
     static func getMissions(_ completion: @escaping (Network.ApiResponse) -> Void) {
         let u = "\(baseUrl)/\(defaultUserId)/missions/new/3"
-        print(u)
+        guard let url = URL(string: u) else {
+            completion(.error(Network.NetworkError.urlFormating(u)))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        network.get(urlRequest: request, decodable: User.self) {
+            response in
+            
+            completion(response)
+        }
+    }
+
+    static func createUser(_ user: User, _ completion: @escaping (Network.ApiResponse) -> Void) {
+        let u = "\(baseUrl)/user/new"
         guard let url = URL(string: u) else {
             completion(.error(Network.NetworkError.urlFormating(u)))
             return
