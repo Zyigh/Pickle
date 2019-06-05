@@ -41,28 +41,12 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="8DN-OX-FV1"/>
                         <segue destination="sfB-d6-tBZ" kind="relationship" relationship="viewControllers" id="ylZ-Kj-10b"/>
-                        <segue destination="MGJ-i5-M2n" kind="relationship" relationship="viewControllers" id="Jju-7T-R2U"/>
+                        <segue destination="bZp-Fi-hBn" kind="relationship" relationship="viewControllers" id="TSI-GP-Nf2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAw-RW-iSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-959" y="21"/>
-        </scene>
-        <!--Compte-->
-        <scene sceneID="AiU-R9-6zL">
-            <objects>
-                <viewController id="MGJ-i5-M2n" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qip-T8-UNl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="5lo-jE-JJr"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Compte" image="ic-profile" selectedImage="ic-profile--active" id="WS1-Xm-ZXk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BpR-Pt-Wh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="48" y="879"/>
         </scene>
         <!--Missions-->
         <scene sceneID="tne-QT-ifu">
@@ -812,13 +796,69 @@ Une fois une mission réussie, les Pickles sont ajoutés à votre progression ! 
             </objects>
             <point key="canvasLocation" x="2580" y="-733"/>
         </scene>
+        <!--Mon Compte-->
+        <scene sceneID="sl7-Nk-r1f">
+            <objects>
+                <viewController title="Mon Compte" id="bZp-Fi-hBn" customClass="AccountViewController" customModule="gaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="abJ-Xu-0JK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pour accéder à vos paramètres, vous devez vous inscrire" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwK-qR-grN">
+                                <rect key="frame" x="20" y="132" width="335" height="102"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" name="pickleColor-darkBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SoC-TT-vmy">
+                                <rect key="frame" x="74" y="314" width="227" height="341"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="227" id="Mcg-mr-qYu"/>
+                                    <constraint firstAttribute="height" constant="341" id="oDz-Yc-Hvb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iju-kc-4O6" customClass="PickleButton" customModule="gaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="695" width="335" height="56"/>
+                                <color key="backgroundColor" name="pickleColor-darkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="c3c-Se-def"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal" title="Je m'inscris">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SwK-qR-grN" firstAttribute="top" secondItem="eSF-iZ-2Fx" secondAttribute="top" constant="88" id="A8P-It-Lob"/>
+                            <constraint firstItem="SoC-TT-vmy" firstAttribute="centerX" secondItem="abJ-Xu-0JK" secondAttribute="centerX" id="Ddz-NC-W2a"/>
+                            <constraint firstItem="SoC-TT-vmy" firstAttribute="centerY" secondItem="abJ-Xu-0JK" secondAttribute="centerY" constant="78.5" id="JHQ-jC-axY"/>
+                            <constraint firstItem="iju-kc-4O6" firstAttribute="top" secondItem="SoC-TT-vmy" secondAttribute="bottom" constant="40" id="Sfj-AW-GXP"/>
+                            <constraint firstAttribute="trailing" secondItem="SwK-qR-grN" secondAttribute="trailing" constant="20" id="XYZ-sJ-l4N"/>
+                            <constraint firstItem="SwK-qR-grN" firstAttribute="leading" secondItem="eSF-iZ-2Fx" secondAttribute="leading" constant="20" id="chl-Bh-YQC"/>
+                            <constraint firstItem="iju-kc-4O6" firstAttribute="leading" secondItem="eSF-iZ-2Fx" secondAttribute="leading" constant="20" id="pNU-nW-4b7"/>
+                            <constraint firstItem="eSF-iZ-2Fx" firstAttribute="trailing" secondItem="iju-kc-4O6" secondAttribute="trailing" constant="20" id="tdN-LT-X09"/>
+                            <constraint firstItem="SoC-TT-vmy" firstAttribute="top" secondItem="SwK-qR-grN" secondAttribute="bottom" constant="80" id="vCP-Az-nVE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eSF-iZ-2Fx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mon compte" image="ic-profile" id="clU-Cr-2vU"/>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="gif" destination="SoC-TT-vmy" id="uMk-Ba-A16"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hiQ-HB-VWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644" y="879"/>
+        </scene>
     </scenes>
     <resources>
         <image name="electronics" width="300" height="210"/>
         <image name="ic-missions" width="24" height="24"/>
         <image name="ic-missions--active" width="24" height="24"/>
         <image name="ic-profile" width="24" height="24"/>
-        <image name="ic-profile--active" width="24" height="24"/>
         <image name="ic-stats" width="24" height="24"/>
         <image name="ic-stats--active" width="24" height="24"/>
         <namedColor name="pickeColor-grey">

@@ -45,6 +45,9 @@
 		4936FAE422A6DAA3001B89EA /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAE322A6DAA3001B89EA /* Buttons.swift */; };
 		4936FAE722A71DF4001B89EA /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAE622A71DF4001B89EA /* CurrentUser.swift */; };
 		4936FAE922A72403001B89EA /* PicklePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAE822A72403001B89EA /* PicklePopup.swift */; };
+		4936FAF722A7CF85001B89EA /* UIImageGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAF622A7CF85001B89EA /* UIImageGif.swift */; };
+		4936FAF922A7CFB1001B89EA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936FAF822A7CFB1001B89EA /* AccountViewController.swift */; };
+		4936FAFB22A7D1FD001B89EA /* inscription.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4936FAFA22A7D1FC001B89EA /* inscription.gif */; };
 		497637AE22A4231E009B8BB9 /* ConnexionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497637AD22A4231E009B8BB9 /* ConnexionToken.swift */; };
 		49C0FAE322A43C2700FCAF6D /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */; };
 		49C0FAE522A474D400FCAF6D /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0FAE422A474D400FCAF6D /* Tap.swift */; };
@@ -111,6 +114,9 @@
 		4936FAE322A6DAA3001B89EA /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		4936FAE622A71DF4001B89EA /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		4936FAE822A72403001B89EA /* PicklePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicklePopup.swift; sourceTree = "<group>"; };
+		4936FAF622A7CF85001B89EA /* UIImageGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageGif.swift; sourceTree = "<group>"; };
+		4936FAF822A7CFB1001B89EA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4936FAFA22A7D1FC001B89EA /* inscription.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = inscription.gif; sourceTree = "<group>"; };
 		497637AD22A4231E009B8BB9 /* ConnexionToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionToken.swift; sourceTree = "<group>"; };
 		49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
 		49C0FAE422A474D400FCAF6D /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 		493078F22271076C00E979BE /* PicklePOC */ = {
 			isa = PBXGroup;
 			children = (
+				4936FAFA22A7D1FC001B89EA /* inscription.gif */,
 				4930791B22714BF300E979BE /* Assets.xcassets */,
 				4930791D22714D1400E979BE /* fonts */,
 				4930790B2271126C00E979BE /* services */,
@@ -188,6 +195,7 @@
 				49C0FAE222A43C2700FCAF6D /* MissionsViewController.swift */,
 				49C0FBB922A6C88900FCAF6D /* StatsViewController.swift */,
 				49C0FBBB22A6C8B100FCAF6D /* StatsHelpViewController.swift */,
+				4936FAF822A7CFB1001B89EA /* AccountViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 				49C0FBC122A6C91900FCAF6D /* ProgressView.swift */,
 				4936FAE322A6DAA3001B89EA /* Buttons.swift */,
 				4936FAE622A71DF4001B89EA /* CurrentUser.swift */,
+				4936FAF622A7CF85001B89EA /* UIImageGif.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -323,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4936FAFB22A7D1FD001B89EA /* inscription.gif in Resources */,
 				4930792D22714E4600E979BE /* SF-Pro-Display-Semibold.otf in Resources */,
 				49C0FBC722A6CFB600FCAF6D /* Onboarding.storyboard in Resources */,
 				4930792E22714E4600E979BE /* SF-Pro-Display-Bold.otf in Resources */,
@@ -347,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4936FAF922A7CFB1001B89EA /* AccountViewController.swift in Sources */,
 				4936FABD22A6DA2D001B89EA /* ObIntroContentViewController.swift in Sources */,
 				4930790D2271127800E979BE /* Utils.swift in Sources */,
 				4936FADF22A6DA69001B89EA /* PopupSubscribeView.swift in Sources */,
@@ -381,6 +392,7 @@
 				49C0FBBE22A6C8D800FCAF6D /* StatsMissionCollectionViewCell.swift in Sources */,
 				49C0FBC022A6C90100FCAF6D /* Sliders.swift in Sources */,
 				4936FABF22A6DA2D001B89EA /* ObAvatarViewController.swift in Sources */,
+				4936FAF722A7CF85001B89EA /* UIImageGif.swift in Sources */,
 				49C0FAEC22A5063800FCAF6D /* PickleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

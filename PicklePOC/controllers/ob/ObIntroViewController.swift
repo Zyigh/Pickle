@@ -19,8 +19,20 @@ class ObIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let uuid = uuid {
-            UserDefaults().set(uuid.uuidString, forKey: "uuid")
+        
+        ApiConnexion.createUser() {
+            response in
+            
+            switch response {
+            case .success(let user):
+                guard let user = user as? User, let id = user.id else {
+                    print("not a user...")
+                    return
+                }
+                UserDefaults().set(id.uuidString, forKey: "uuid")
+            case .error(let e):
+                print(e.localizedDescription)
+            }
         }
     }
     
