@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PopupAcceptMissionView : UIView {
+class PopupAcceptMissionView : UIView, PicklePopup {
     
     static let instance = PopupAcceptMissionView()
     var origin: UIViewController? = nil
@@ -45,6 +45,7 @@ class PopupAcceptMissionView : UIView {
     
     @IBAction func onClickBack(_ sender: Any) {
         parentView.removeFromSuperview()
+        reloadOrigin()
     }
     
 }
