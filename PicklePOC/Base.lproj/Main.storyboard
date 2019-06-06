@@ -246,14 +246,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="electronics" translatesAutoresizingMaskIntoConstraints="NO" id="PCd-kY-43P">
-                                <rect key="frame" x="0.0" y="44" width="414" height="210"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="electronics" translatesAutoresizingMaskIntoConstraints="NO" id="PCd-kY-43P">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
+                                <color key="backgroundColor" name="pickleColor-pink"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="J4f-E4-JlH"/>
+                                    <constraint firstAttribute="height" constant="287" id="J4f-E4-JlH"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ÉNERGIE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBX-lJ-NMI">
-                                <rect key="frame" x="24" y="271" width="62" height="24"/>
+                                <rect key="frame" x="24" y="304" width="62" height="24"/>
                                 <color key="backgroundColor" name="pickleColor-purple"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="62" id="AGh-Ty-gqq"/>
@@ -268,25 +269,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eteindre ses appareils électroniques" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu8-T2-vZD">
-                                <rect key="frame" x="24" y="305" width="366" height="20.5"/>
+                                <rect key="frame" x="24" y="338" width="366" height="20.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
                                 <color key="textColor" name="pickleColor-darkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pourquoi ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qJ-BU-tYo">
-                                <rect key="frame" x="24" y="365.5" width="366" height="21"/>
+                                <rect key="frame" x="24" y="398.5" width="366" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Quelques pickles..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-rT-3AD">
-                                <rect key="frame" x="24" y="500" width="366" height="21"/>
+                                <rect key="frame" x="24" y="533" width="366" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7l-4m-qRn">
-                                <rect key="frame" x="24" y="394.5" width="366" height="81.5"/>
+                                <rect key="frame" x="24" y="427.5" width="366" height="81.5"/>
                                 <string key="text">Les appareils électroniques en veille représentent 11% de votre consommation annuelle. À l'échelle nationale, cela équivaut à la production de deux réacteurs nucléaires !</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -338,7 +339,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jxB-cY-wfm">
-                                <rect key="frame" x="24" y="529" width="366" height="237"/>
+                                <rect key="frame" x="24" y="562" width="366" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="picklecell" id="C7d-lY-h2z" customClass="PickleCell" customModule="PicklePOC" customModuleProvider="target">
@@ -368,17 +369,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-Xl-rZv">
+                                <rect key="frame" x="375" y="63" width="24" height="24"/>
+                                <state key="normal" image="ic-close"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="5h4-Xl-rZv" secondAttribute="trailing" constant="15" id="203-nx-rLd"/>
                             <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="Q13-8x-3gY" secondAttribute="trailing" constant="24" id="2AT-bR-grT"/>
+                            <constraint firstItem="PCd-kY-43P" firstAttribute="top" secondItem="ij7-I8-vJ0" secondAttribute="top" id="5ta-g7-0Bd"/>
                             <constraint firstItem="XYL-dw-v2z" firstAttribute="trailing" secondItem="Qu8-T2-vZD" secondAttribute="trailing" constant="24" id="90z-kp-OEW"/>
                             <constraint firstItem="jxB-cY-wfm" firstAttribute="top" secondItem="ELb-rT-3AD" secondAttribute="bottom" constant="8" id="A9v-C1-WSg"/>
-                            <constraint firstItem="PCd-kY-43P" firstAttribute="top" secondItem="XYL-dw-v2z" secondAttribute="top" id="FHT-XY-Cam"/>
                             <constraint firstItem="Q13-8x-3gY" firstAttribute="bottom" secondItem="XYL-dw-v2z" secondAttribute="bottom" id="GEi-DP-5nc"/>
                             <constraint firstItem="Q13-8x-3gY" firstAttribute="top" secondItem="jxB-cY-wfm" secondAttribute="bottom" constant="8" id="GL3-bd-oVd"/>
-                            <constraint firstItem="PCd-kY-43P" firstAttribute="top" secondItem="XYL-dw-v2z" secondAttribute="top" id="L9a-4L-iMR"/>
                             <constraint firstItem="fBX-lJ-NMI" firstAttribute="top" secondItem="PCd-kY-43P" secondAttribute="bottom" constant="17" id="LoH-oZ-cuf"/>
+                            <constraint firstItem="5h4-Xl-rZv" firstAttribute="top" secondItem="XYL-dw-v2z" secondAttribute="top" constant="19" id="THS-fO-5oI"/>
                             <constraint firstItem="Qu8-T2-vZD" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" constant="24" id="Ubd-sd-Net"/>
                             <constraint firstItem="ELb-rT-3AD" firstAttribute="top" secondItem="K7l-4m-qRn" secondAttribute="bottom" constant="24" id="VCr-SR-z6y"/>
                             <constraint firstItem="PCd-kY-43P" firstAttribute="leading" secondItem="XYL-dw-v2z" secondAttribute="leading" id="Y83-zH-gnt"/>
@@ -799,7 +805,7 @@ Une fois une mission réussie, les Pickles sont ajoutés à votre progression ! 
         <!--Mon Compte-->
         <scene sceneID="sl7-Nk-r1f">
             <objects>
-                <viewController title="Mon Compte" id="bZp-Fi-hBn" customClass="AccountViewController" customModule="gaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mon Compte" id="bZp-Fi-hBn" customClass="AccountViewController" customModule="PicklePOC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abJ-Xu-0JK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -817,7 +823,7 @@ Une fois une mission réussie, les Pickles sont ajoutés à votre progression ! 
                                     <constraint firstAttribute="height" constant="341" id="oDz-Yc-Hvb"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iju-kc-4O6" customClass="PickleButton" customModule="gaiaApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iju-kc-4O6" customClass="PickleButton" customModule="PicklePOC" customModuleProvider="target">
                                 <rect key="frame" x="20" y="695" width="335" height="56"/>
                                 <color key="backgroundColor" name="pickleColor-darkBlue"/>
                                 <constraints>
@@ -856,6 +862,7 @@ Une fois une mission réussie, les Pickles sont ajoutés à votre progression ! 
     </scenes>
     <resources>
         <image name="electronics" width="300" height="210"/>
+        <image name="ic-close" width="24" height="24"/>
         <image name="ic-missions" width="24" height="24"/>
         <image name="ic-missions--active" width="24" height="24"/>
         <image name="ic-profile" width="24" height="24"/>
@@ -872,6 +879,9 @@ Une fois une mission réussie, les Pickles sont ajoutés à votre progression ! 
         </namedColor>
         <namedColor name="pickleColor-lightGrey">
             <color red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pickleColor-pink">
+            <color red="1" green="0.83137254901960789" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pickleColor-purple">
             <color red="0.396078431372549" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

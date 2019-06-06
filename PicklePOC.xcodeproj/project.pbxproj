@@ -146,6 +146,7 @@
 			children = (
 				493078F22271076C00E979BE /* PicklePOC */,
 				493078F12271076C00E979BE /* Products */,
+				4936FAFD22A8028D001B89EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +274,13 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		4936FAFD22A8028D001B89EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,8 +288,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 493079022271077000E979BE /* Build configuration list for PBXNativeTarget "PicklePOC" */;
 			buildPhases = (
-				493078EC2271076C00E979BE /* Sources */,
 				493078ED2271076C00E979BE /* Frameworks */,
+				493078EC2271076C00E979BE /* Sources */,
 				493078EE2271076C00E979BE /* Resources */,
 				4936FAB022A6D970001B89EA /* CopyFiles */,
 			);

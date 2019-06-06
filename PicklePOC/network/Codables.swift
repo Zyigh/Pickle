@@ -1,17 +1,11 @@
-//
-//  Codables.swift
-//  PicklePOC
-//
-//  Created by Hugo Medina on 24/04/2019.
-//  Copyright © 2019 Razeware. All rights reserved.
-//
-
 import Foundation
-
-//@ToDo Use public lib GaiaCodables instead
 
 public enum Level: Int, Codable {
     case jeunepousse, arbuste, vieuxchene
+}
+
+public enum BGColor: String, Codable {
+    case green, pink, purple
 }
 
 public struct User : Codable {
@@ -19,7 +13,7 @@ public struct User : Codable {
     public var email: String?
     public var nickname: String?
     public var password: String?
-    public var missions : [Mission]
+    public var missions = [Mission]()
     public var level: Level
     public var elo : Elo
     
@@ -48,6 +42,7 @@ public struct Mission : Codable {
     public var duration: Int?
     public var description: String?
     public var image: String?
+    public var bgColor: BGColor?
     public var mainSubject: String?
     public var explanations: String?
     public var tips : [String]?
@@ -61,7 +56,9 @@ public struct Mission : Codable {
                 mainSubject: String?,
                 explanations: String?,
                 tips : [String]?,
-                elo : Elo
+                elo : Elo,
+                results: String?,
+                bgColor: BGColor?
         ) {
         self.id = id
         self.duration = duration
@@ -71,23 +68,8 @@ public struct Mission : Codable {
         self.explanations = explanations
         self.tips  = tips
         self.elo  = elo
-    }
-    
-    public func mainSubjectToFrench() -> String? {
-        var french: String? = nil
-        if let subject = mainSubject,
-           let cat = eloCategory(rawValue: subject) {
-            switch cat {
-            case .energy:
-                french = "ÉNERGIE"
-            case .waste:
-                french = "0 DÉCHET"
-            case .food:
-                french = "ALIMENTATION"
-            }
-        }
-        
-        return french
+        self.results = results
+        self.bgColor = bgColor
     }
 }
 
@@ -122,3 +104,23 @@ extension User {
         return lhs.id == rhs.id
     }
 }
+
+extension Mission {
+    public func mainSubjectToFrench() -> String? {
+        var french: String? = nil
+        if let subject = mainSubject,
+            let cat = eloCategory(rawValue: subject) {
+            switch cat {
+            case .energy:
+                french = "ÉNERGIE"
+            case .waste:
+                french = "0 DÉCHET"
+            case .food:
+                french = "ALIMENTATION"
+            }
+        }
+        
+        return french
+    }
+}
+

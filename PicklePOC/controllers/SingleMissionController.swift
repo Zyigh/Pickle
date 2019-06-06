@@ -21,6 +21,28 @@ class SingleMissionController: UIViewController {
     @IBOutlet weak var missionImage: UIImageView!
     var pickles = [PickleContent]()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let mission = mission else { return }
+        
+        if let imgUrl = mission.image,
+            let u = URL(string: "\(ApiConnexion.baseUrl)/\(imgUrl)"),
+            let d = try? Data(contentsOf: u) {
+            missionImage.image = UIImage(data: d)!.imageResize(sizeChange: CGSize(width: 300, height: 210))
+            if let bgColor = mission.bgColor {
+                switch bgColor {
+                case .green:
+                    missionImage.backgroundColor = UIColor.pickleLightGreen
+                case .pink:
+                    missionImage.backgroundColor = UIColor.picklePink
+                case .purple:
+                    missionImage.backgroundColor = UIColor.pickleLavender
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         passerButton.layer.borderWidth = 1
@@ -49,17 +71,15 @@ class SingleMissionController: UIViewController {
         missionType.text = mission.mainSubjectToFrench()
         missionDesc.text = mission.explanations
         missionTitle.text = mission.description
-        
-        if let imgUrl = mission.image,
-           let u = URL(string: "\(ApiConnexion.baseUrl)/\(imgUrl)"),
-           let d = try? Data(contentsOf: u) {
-            missionImage.image = UIImage(data: d)
-        }
     }
     
     @IBAction func passMission(_ sender: UIButton) {
         PopupPassMissionView.instance.showPopup()
         PopupPassMissionView.instance.origin = self
+    }
+    
+    @IBAction func closeMissionAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func acceptMissionAction(_ sender: UIButton) {
@@ -89,3 +109,20 @@ extension SingleMissionController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+extension UIImage {
+    
+    func imageResize (sizeChange:CGSize)-> UIImage{
+        
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        self.draw(in: CGRect(origin: CGPoint.zero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        return scaledImage!
+    }
+    
+}
+

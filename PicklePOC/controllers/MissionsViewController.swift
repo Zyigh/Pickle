@@ -23,8 +23,7 @@ class MissionsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let ud = UserDefaults()
-        if nil == ud.getValue(key: "uuid") {
+        if nil == UserDefaults().getValue(key: "uuid") {
             present("ObIntroViewController", storyboard: "Onboarding", bundle: nil) {_ in}
         } else {
             ApiConnexion.createUser() {

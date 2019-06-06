@@ -41,6 +41,7 @@ class ObNameViewController: UIViewController {
         errorMessage.text = ""
         
         validateInputValue(value: username)
+        CurrentUser.user?.nickname = username
 
         nextObStepLevel()
     }

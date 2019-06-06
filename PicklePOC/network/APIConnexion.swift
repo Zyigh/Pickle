@@ -15,7 +15,18 @@ class ApiConnexion {
     private static let defaultUserId = "2DEB7967-0148-48C7-BE5D-191E1F5CD42D"
     
     static func getMissions(_ completion: @escaping (Network.ApiResponse) -> Void) {
-        let u = "\(baseUrl)/\(defaultUserId)/missions/new/3"
+        let uid: UUID?
+        if let user = CurrentUser.user {
+            uid = user.id
+        } else {
+            uid = UUID(uuidString: (UserDefaults().getValue(key: "uuid") ?? "not uuid"))
+        }
+        guard let id = uid else {
+            completion(.error(Network.NetworkError.generic("No user is using the app")))
+            return
+        }
+        let u = "\(baseUrl)/\(id.uuidString)/missions/new"
+        
         guard let url = URL(string: u) else {
             completion(.error(Network.NetworkError.urlFormating(u)))
             return

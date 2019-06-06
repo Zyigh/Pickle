@@ -18,8 +18,6 @@ class ObIntroViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         ApiConnexion.createUser() {
             response in
             
@@ -29,7 +27,8 @@ class ObIntroViewController: UIViewController {
                     print("not a user...")
                     return
                 }
-                UserDefaults().set(id.uuidString, forKey: "uuid")
+                CurrentUser.user = user
+                UserDefaults().setValue(value: id.uuidString, key: "uuid")
             case .error(let e):
                 print(e.localizedDescription)
             }
