@@ -65,6 +65,7 @@ class MissionsViewController: UIViewController {
                 print(e)
             }
         }
+        longMissionImage.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
     }
     
     @objc func missionTap(gesture: UITapGestureRecognizer) {
@@ -91,6 +92,7 @@ class MissionsViewController: UIViewController {
         longMissionType.text = mission.mainSubjectToFrench()
         longMissionTitle.text = mission.description
         Tap.addTapGesture(view: longMissionImage, target: self, action: #selector(missionTap))
+        longMissionImage.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
     }
     
     func setMissionDuration(_ n: Int) {
@@ -138,5 +140,14 @@ extension MissionsViewController: UICollectionViewDelegate, UICollectionViewData
     func setUpShortMissionList() {
         shortMissionList.dataSource = self
         shortMissionList.delegate = self
+    }
+}
+
+extension UIView {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
     }
 }

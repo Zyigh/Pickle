@@ -51,7 +51,7 @@ extension UIColor {
         UIColor(red: 1.0, green: 212.0 / 255.0, blue: 212.0 / 255.0, alpha: 1.0)
     
     static let pickleLavender =
-        UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 244.0 / 255.0, alpha: 1.0)
+        UIColor(red: 170.0 / 255.0, green: 163.0 / 255.0, blue: 244.0 / 255.0, alpha: 1.0)
     
     static let pickleGreen =
         UIColor(red: 93.0 / 255.0, green: 175.0 / 255.0, blue: 84.0 / 255.0, alpha: 1.0)

@@ -372,6 +372,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-Xl-rZv">
                                 <rect key="frame" x="375" y="63" width="24" height="24"/>
                                 <state key="normal" image="ic-close"/>
+                                <connections>
+                                    <action selector="closeMissionAction:" destination="Re7-TU-hyG" eventType="touchUpInside" id="sOW-99-zax"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
