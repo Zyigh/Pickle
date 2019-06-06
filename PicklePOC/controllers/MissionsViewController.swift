@@ -118,6 +118,14 @@ extension MissionsViewController: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shortmissioncell", for: indexPath) as! ShortMissionCell
         
         cell.configure(with: shortMissions[indexPath.row])
+        cell.layer.cornerRadius = 10
+        
+//        cell.layer.shadowColor = UIColor.black.cgColor
+//        cell.layer.shadowOffset = .zero
+//        cell.layer.shadowOpacity = 0.1
+//        cell.layer.shadowPath = UIBezierPath(rect: cell.bounds).cgPath
+//        cell.layer.shouldRasterize = true
+        
         Tap.addTapGesture(view: cell, target: cell, action: #selector(missionTap))
         
         return cell
